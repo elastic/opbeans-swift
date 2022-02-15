@@ -10,10 +10,13 @@ use `Shared/Resources/apiData.json` to configure the target opbean endpoint. Def
 
 
 ### Data generation
+Data generate TBD
 
-use `./script/generate-data.py` to prep and run `ios-integration-testing` with a random selection of attributes from the files in `./scripts/data` applied to the Resources object.
+[//]: # (use `./script/generate-data.py` to prep and run `ios-integration-testing` with a random selection of attributes from the files in `./scripts/data` applied to the Resources object.)
 
-`generate-data.py` accepts a several parameters to set app installation destination, and collector / opbean configurations. A list of possible desinations can be provided by `xcodebuild -showdestinations`. The default value is `"platform=iOS Simulator,name=iPad (8th generation)"` more details can be found calling `python3 ./script/generate-data.py -h`.
+[//]: # ()
+[//]: # (`generate-data.py` accepts a several parameters to set app installation destination, and collector / opbeans configurations. A list of possible desinations can be provided by `xcodebuild -showdestinations`.  The default value is `"platform=iOS Simulator,name=iPad &#40;8th generation&#41;"` more details can be found calling `python3 ./script/generate-data.py -h`.)
 
-Agent configuration must be done through `ios-integration-testing` for this script.
+[//]: # ()
+[//]: # (Agent configuration must be done through `ios-integration-testing` for this script.)
 
