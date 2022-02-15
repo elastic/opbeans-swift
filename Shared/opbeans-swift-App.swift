@@ -19,9 +19,10 @@ struct ios_integration_testingApp: App {
     @StateObject private var modelData = ModelData()
     init() {
         var config = AgentConfiguration()
-        config.collectorHost = "ios-test.apm.us-east4.gcp.elastic-cloud.com"
-        config.collectorPort = 443
-        config.collectorTLS = true
+        config.collectorHost = "localhost"
+        config.collectorPort = 8200
+        config.collectorTLS = false
+//        config.secretToken = ""
     
         let envvars = ProcessInfo.processInfo.environment
             
