@@ -1,11 +1,11 @@
-# ios-integration-testing
+# opbeans-swift
 
-An opbeans based integration test for the iOS Agent. 
-This project is intended to be used in conjunction with [apm-integration-testing](https://github.com/elastic/apm-integration-testing)
+An opbeans based app for the iOS Agent. 
+This project is intended to be used in conjunction with [apm-integration-testing](https://github.com/elastic/apm-integration-testing) and the other opbeans applications.
 
 Agent configuration can be found in `./Shared/Model/ios_integration_testingApp.swift` including options to set collector address & secret token. 
 
-use `Shared/Resources/apiData.json` to configure the target opbean endpoint in the apm-integration-testing suite.
+use `Shared/Resources/apiData.json` to configure the target opbean endpoint. Default to the opbeans-node on port `3000`.
 
 
 

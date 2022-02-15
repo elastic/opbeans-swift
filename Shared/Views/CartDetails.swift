@@ -24,7 +24,7 @@ struct CartDetails: View {
         loading = true
         Task {
             do {
-                let result = try await sendCheckout(userId: 1, items: modelData.cart) as! HTTPURLResponse
+                let _ = try await sendCheckout(userId: 1, items: modelData.cart) as! HTTPURLResponse
                 loading = false
                 modelData.cart.removeAll()
             }

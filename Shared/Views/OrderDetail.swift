@@ -40,7 +40,7 @@ struct OrderDetail: View {
 
 struct OrderDetail_Previews: PreviewProvider {
     static var previews: some View {
-        var order = OrderLine(id: 12345, customer_id: 12334543, created_at: "2022-02-15T18:41:22.106Z", customer_name: "Bryce Buchanan")
+        let order = OrderLine(id: 12345, customer_id: 12334543, created_at: "2022-02-15T18:41:22.106Z", customer_name: "Bryce Buchanan")
         OrderDetail(order: order)
     }
 }
