@@ -38,6 +38,6 @@ struct CustomerRow: View {
 struct CustomerRow_Previews: PreviewProvider {
     static var previews: some View {
         let customer = Customer(id: 1234, full_name: "Bryce Buchanan", company_name: "Elastic", email: "bryce@elastic.co", address: "110 N Stafford Street", postal_code: "97122", city: "Portland", country: "USA")
-        CustomerRow(customer: customer)
+        CustomerRow(customer: customer).environmentObject(ModelData())
     }
 }

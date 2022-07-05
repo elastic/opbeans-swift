@@ -71,6 +71,7 @@ struct MainView : View {
     
     func fetch() {
         modelData.loadProducts()
+        modelData.loadCustomer()
     }
     
     var body: some View {

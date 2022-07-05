@@ -14,7 +14,8 @@
 
 import SwiftUI
 
-struct OrderDetail: View {
+struct MyOrderRow: View {
+    @EnvironmentObject var modelData : ModelData
     var order : OrderLine
     var date : String {
         let formatter = DateFormatter()
@@ -25,20 +26,20 @@ struct OrderDetail: View {
     }
     var body: some View {
         HStack {
-            Text(order.customer_name)
+            Text("#\(String(order.id))")
             Spacer()
             VStack(alignment: .trailing){
-                Text("#\(String(order.id))")
-
                 Text(self.date)
                     .foregroundColor(.gray)
                     .font(.caption)
             }
+        }.onAppear {
+            
         }
     }
 }
 
-struct OrderDetail_Previews: PreviewProvider {
+struct MyOrderDetail_Previews: PreviewProvider {
     static var previews: some View {
         let order = OrderLine(id: 12345, customer_id: 12334543, created_at: "2022-02-15T18:41:22.106Z", customer_name: "Bryce Buchanan")
         OrderDetail(order: order).environmentObject(ModelData())

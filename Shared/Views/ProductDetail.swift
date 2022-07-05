@@ -46,11 +46,13 @@ struct CircleImage_Previews: PreviewProvider {
 struct ProductDetail : View {
     var product : Product
     @EnvironmentObject var modelData : ModelData
-    func addCart() {
+    func toggleCart() {
         if var item = modelData.cart.first(where: { item in
             item.product == product
         }) {
-            item.count += 1
+            modelData.cart.removeAll { item in
+                item.product == product
+            }
         } else {
             modelData.cart.append(CartItem(product: product, count: 1))
         }
@@ -95,10 +97,10 @@ struct ProductDetail : View {
         .ignoresSafeArea(edges:.top)
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
-                Button(action:addCart) {
+                Button(action:toggleCart) {
                     Label("",systemImage: (modelData.cart.contains(where: { item in
                         item.product == product
-                    })) ? "cart.badge.plus.fill" : "cart.badge.plus")
+                    })) ? "cart.badge.minus.fill" : "cart.badge.plus")
                 }
             }
         }
@@ -110,6 +112,6 @@ struct ProductDetail : View {
 struct ProductDetail_Preview: PreviewProvider {
     static var previews: some View {
         let product = Product(id: 1, sku: "OP-DRC-C1", name: "Brazil Verde, Italian Roast", stock: 80, type_name: "Dark Roast Coffee")
-        return ProductDetail(product: product)
+        return ProductDetail(product: product).environmentObject(ModelData())
     }
 }

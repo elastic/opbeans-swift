@@ -12,42 +12,36 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import Foundation
 import SwiftUI
 
-struct CartRow: View {
-    var product : Product
-    var count : Int
+struct LineItemRow: View {
+    var lineItem : LineItem
     var body : some View {
         HStack {
-            AsyncImage(url:product.image_url) { image in
+            AsyncImage(url:lineItem.image_url) { image in
                 image.resizable()
             } placeholder: {
                 ProgressView()
             }
             .frame(width: 60, height: 60)
             VStack(alignment: .leading, spacing: 5) {
-                Text(product.name)
+                Text(lineItem.name)
                     .bold()
-                Text(product.type_name)
-                    .italic()
-                    .foregroundColor(.gray)
-                    .font(.caption)
+                HStack {
+                    Text("Qty: \(lineItem.amount)")
+                        .italic()
+                        .foregroundColor(.gray)
+                        .font(.caption)
+                        .padding(.leading, 10)
+                    Spacer()
+                    Text("Price: §\(lineItem.selling_price)")
+                        .font(.caption)
+                        .foregroundColor(.gray)
+                        .padding(.trailing, 10)
+                }
             }
             Spacer()
-            Text(String(count))
+            
         }
     }
 }
-
-struct EmptyCartRow : View {
-    var body : some View {
-        HStack {
-            Text("Your cart is empty.")
-                .font(.subheadline)
-            Spacer()
-        }
-    }
-}
-
-

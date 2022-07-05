@@ -31,6 +31,7 @@ class ModelData : ObservableObject {
     @Published var products = [Product]()
     @Published var customers = [Customer]()
     @Published var orders = [OrderLine]()
+    @Published var user : Customer?
     
     func loadProducts() {
         guard products.isEmpty else { return }
@@ -44,8 +45,8 @@ class ModelData : ObservableObject {
         }
     }
     
-    func loadOrders() {
-        guard orders.isEmpty else {return}
+    func loadOrders(_ force : Bool = false) {
+        guard orders.isEmpty || force else {return}
         Task {
             do {
                 let orders = try await JSONDecoder().decode([OrderLine].self, from: getAPIData(path: "api/orders"))
@@ -68,6 +69,7 @@ class ModelData : ObservableObject {
                 let customers = try await JSONDecoder().decode([Customer].self, from: getAPIData(path: "api/customers"))
                 DispatchQueue.main.async {
                     self.customers = customers
+                    self.user = self.customers[(Int(arc4random()) % self.customers.count)]
                 }
             } catch {
                 DispatchQueue.main.async {
@@ -76,7 +78,13 @@ class ModelData : ObservableObject {
             }
         }
     }
-    
+    func fetchFullOrder(forOrder order: Int) async -> FullOrder? {
+        do {
+            return try await JSONDecoder().decode(FullOrder.self,from: getAPIData(path: "api/orders/\(order)"))
+        } catch {
+            return nil
+        }
+    }
     private func fetchProducts() async -> [Product] {
         do {
             return try await JSONDecoder().decode([Product].self, from: getAPIData(path: "api/products"))
@@ -125,7 +133,7 @@ func getAPIData(path: String) async throws -> Data {
     var request = try URLRequest( url:buildUrl(path: path))
     
     // set auth key here
-    if let auth = opbeansAuth {
+    if let auth = opbeansAuth, !auth.isEmpty {
         request.addValue("Basic \(auth)", forHTTPHeaderField: "Authorization")
     }
     
@@ -136,13 +144,15 @@ func getAPIData(path: String) async throws -> Data {
 func sendCheckout(userId: Int, items: [CartItem]) async throws -> URLResponse {
     var request = try URLRequest(url: buildCheckoutURL())
     request.httpMethod = "POST"
+    request.setValue("application/json", forHTTPHeaderField: "Content-Type")
     var lines = [ProductLine]()
     for item in items {
         lines.append(ProductLine(id: item.product.id, amount:item.count))
     }
-    
-    request.httpBody = try JSONEncoder().encode(Order(customer_id: userId, lines: lines))
-    if let auth = opbeansAuth {
+    let json = try JSONEncoder().encode(Order(customer_id: userId, lines: lines))
+    request.httpBody = json
+    print(String(decoding:json, as: UTF8.self))
+    if let auth = opbeansAuth, !auth.isEmpty {
         request.addValue("Basic \(auth)", forHTTPHeaderField: "Authorization")
     }
     

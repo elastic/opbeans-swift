@@ -32,6 +32,6 @@ struct AllOrdersList: View {
 
 struct AllOrdersList_Previews: PreviewProvider {
     static var previews: some View {
-        AllOrdersList()
+        AllOrdersList().environmentObject(ModelData())
     }
 }

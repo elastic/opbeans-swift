@@ -16,69 +16,100 @@ import SwiftUI
 
 struct AdminMenu : View {
     @EnvironmentObject var modelData : ModelData
-
+    
     var body : some View {
         VStack(alignment: .leading) {
-            NavigationLink {
-                AllCustomersList()
-                    .environmentObject(modelData)
-
-            } label: {
-            HStack {
-                Image(systemName: "person.3")
-//                    .foregroundColor(.gray)
-                    .imageScale(.large)
-                Spacer()
-                Text("Customers")
-//                    .foregroundColor(.gray)
+            VStack {
+                Divider()
+                Text("User")
                     .font(.headline)
+                Divider()
+                NavigationLink {
+                    MyOrdersList().environmentObject(modelData)
+                } label: {
+                    HStack {
+                        Image(systemName: "cart")
+                        //                    .foregroundColor(.gray)
+                            .imageScale(.large)
+                        Spacer()
+                        
+                        Text("My Orders")
+                        //                    .foregroundColor(.gray)
+                            .font(.headline)
+                    }
+                }
             }
             .padding(.top, 100)
             .padding(.bottom,15)
-            }
-            Divider()
-
-            NavigationLink {
-                AllOrdersList()
-                    .environmentObject(modelData)
-            } label: {
-            HStack {
-                Image(systemName: "cart")
-//                    .foregroundColor(.gray)
-                    .imageScale(.large)
-                Spacer()
-                
-                Text("Orders")
-//                    .foregroundColor(.gray)
-                    .font(.headline)
-            }
-            .padding(.top, 15)
-            .padding(.bottom, 15)
             
-            }
             Divider()
-
-            NavigationLink {
-                AllProductsList()
-                    .environmentObject(modelData)
-
-            } label: {
-            HStack {
-                Image(systemName: "cup.and.saucer")
-//                    .foregroundColor(.gray)
-                    .imageScale(.large)
-                Spacer()
-
-                Text("Products")
-//                    .foregroundColor(.gray)
+            VStack {
+                Text("Admin")
                     .font(.headline)
-            }
-            .padding(.top, 15)
-            .padding(.bottom, 15)
+                Divider()
+                NavigationLink {
+                    AllCustomersList()
+                        .environmentObject(modelData)
+                    
+                } label: {
+                    HStack {
+                        Image(systemName: "person.3")
+                        //                    .foregroundColor(.gray)
+                            .imageScale(.large)
+                        Spacer()
+                        Text("Customers")
+                        //                    .foregroundColor(.gray)
+                            .font(.headline)
+                    }
+                    .padding(.top, 15)
+                    .padding(.bottom,15)
+                }
+                Divider()
+                
+                NavigationLink {
+                    AllOrdersList()
+                        .environmentObject(modelData)
+                } label: {
+                    HStack {
+                        Image(systemName: "cart")
+                        //                    .foregroundColor(.gray)
+                            .imageScale(.large)
+                        Spacer()
+                        
+                        Text("All Orders")
+                        //                    .foregroundColor(.gray)
+                            .font(.headline)
+                    }
+                    .padding(.top, 15)
+                    .padding(.bottom, 15)
+                    
+                }
+                Divider()
+                
+                NavigationLink {
+                    AllProductsList()
+                        .environmentObject(modelData)
+                    
+                } label: {
+                    HStack {
+                        Image(systemName: "cup.and.saucer")
+                        //                    .foregroundColor(.gray)
+                            .imageScale(.large)
+                        Spacer()
+                        
+                        Text("Products")
+                        //                    .foregroundColor(.gray)
+                            .font(.headline)
+                    }
+                    .padding(.top, 15)
+                    .padding(.bottom, 15)
+                }
             }
             Divider()
             Spacer()
-            
+            Divider()
+            UserView()
+                .environmentObject(modelData)
         }
         .padding()
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -88,6 +119,6 @@ struct AdminMenu : View {
 
 struct AdminMenu_Preview: PreviewProvider {
     static var previews : some View {
-        AdminMenu()
+        AdminMenu().environmentObject(ModelData())
     }
 }

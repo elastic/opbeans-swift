@@ -30,3 +30,26 @@ struct OrderLine : Hashable, Codable {
     let created_at : String
     let customer_name : String
 }
+
+struct LineItem: Hashable, Codable {
+    let amount : Int
+    let id : Int
+    let sku : String
+    let name : String
+    let description : String
+    let type_id : Int
+    let stock : Int
+    let cost : Int
+    let selling_price : Int
+    
+    var image_url : URL? {
+         buildImageUrl(sku: sku)
+    }
+}
+
+struct FullOrder : Hashable, Codable {
+    let id : Int
+    let customer_id: Int
+    let created_at : String
+    let lines : [LineItem]
+}

@@ -15,39 +15,22 @@
 import Foundation
 import SwiftUI
 
-struct CartRow: View {
-    var product : Product
-    var count : Int
+struct UserView : View {
+    @EnvironmentObject var modelData : ModelData
     var body : some View {
         HStack {
-            AsyncImage(url:product.image_url) { image in
-                image.resizable()
-            } placeholder: {
-                ProgressView()
-            }
-            .frame(width: 60, height: 60)
-            VStack(alignment: .leading, spacing: 5) {
-                Text(product.name)
-                    .bold()
-                Text(product.type_name)
-                    .italic()
+            Image(systemName: "person.crop.circle")
+                .imageScale(.large)
+            Spacer()
+            if let user = modelData.user {
+                Text(user.full_name)
                     .foregroundColor(.gray)
-                    .font(.caption)
+                    .font(.headline)
             }
-            Spacer()
-            Text(String(count))
         }
+    .onAppear  {
+        modelData.loadCustomer()
     }
 }
 
-struct EmptyCartRow : View {
-    var body : some View {
-        HStack {
-            Text("Your cart is empty.")
-                .font(.subheadline)
-            Spacer()
-        }
-    }
 }
-
-

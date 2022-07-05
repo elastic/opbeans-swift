@@ -31,6 +31,6 @@ struct AllCustomersList: View {
 
 struct AllCustomersList_Previews: PreviewProvider {
     static var previews: some View {
-        AllCustomersList()
+        AllCustomersList().environmentObject(ModelData())
     }
 }

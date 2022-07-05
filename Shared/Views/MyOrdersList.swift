@@ -13,25 +13,30 @@
 //   limitations under the License.
 
 import SwiftUI
-
-struct AllProductsList: View {
+struct MyOrdersList: View {
     @EnvironmentObject var modelData : ModelData
     
     var body: some View {
         VStack {
-            List(modelData.products, id: \.id) { product in
-                AdminProductRow(product: product)
+            List(modelData.orders.filter({ order in
+              return order.customer_id == modelData.user?.id ?? -1
+            }), id: \.id) { order in
+                NavigationLink {
+                    OrderDetails(orderId: order.id).environmentObject(modelData)
+                } label: {
+                    MyOrderRow(order: order)
+                }
                 
             }
         }.onAppear  {
-            modelData.loadProducts()
-        }
+            modelData.loadOrders(true)
+        }.navigationTitle("My Orders")
     }
         
 }
 
-struct AllProductsList_Previews: PreviewProvider {
+struct MyOrdersList_Previews: PreviewProvider {
     static var previews: some View {
-        AllProductsList().environmentObject(ModelData())
+        MyOrdersList().environmentObject(ModelData())
     }
 }
