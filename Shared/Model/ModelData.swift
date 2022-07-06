@@ -49,7 +49,8 @@ class ModelData : ObservableObject {
         guard orders.isEmpty || force else {return}
         Task {
             do {
-                let orders = try await JSONDecoder().decode([OrderLine].self, from: getAPIData(path: "api/orders"))
+                //there's not a way to get orders based on userid so we have to get alllll the orders using a large limit (default limit is only 1000 orders)
+                let orders = try await JSONDecoder().decode([OrderLine].self, from: getAPIData(path: "api/orders?limit=10000"))
                 DispatchQueue.main.async {
                     self.orders = orders
                 }
