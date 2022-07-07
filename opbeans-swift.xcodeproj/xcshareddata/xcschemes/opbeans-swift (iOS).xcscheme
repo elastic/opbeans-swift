@@ -37,6 +37,16 @@
                ReferencedContainer = "container:opbeans-swift.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F6343FF72876271700760527"
+               BuildableName = "opbeans-swift-loadgenerator.xctest"
+               BlueprintName = "opbeans-swift-loadgenerator"
+               ReferencedContainer = "container:opbeans-swift.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
