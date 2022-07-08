@@ -29,7 +29,7 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser(description='run ios-integration-testing with generated OTEL_RESOURCE_ATTRIUTES_ENV')
     parser.add_argument('--destination', help='set a device/simulator target for ios-integation-testing', default="platform=iOS Simulator,name=iPhone 8")
-    
+    parser.add_argument('--disable-generate-resources', help='use to disable randomly generated resource values.', action='store_true')
     parser.add_argument('--collector-address', help='collector address to use, host name or ip acceptable.')
     parser.add_argument('--collector-port', help='collector port to use')
     parser.add_argument('--collector-tls', help='flag if tls is enabled for collector. true/false')
@@ -41,9 +41,10 @@ if __name__ == '__main__':
     args = parser.parse_args()
     
     print(args)
-    
-    envvars = generate_resources()
-    
+
+    envvars = ""
+    if not args.disable_generate_resources:
+        envvars += generate_resources()
     
     if args.collector_address:
         envvars += ' OTEL_COLLECTOR_ADDRESS="' + args.collector_address + '"'
@@ -63,8 +64,8 @@ if __name__ == '__main__':
     if args.opbeans_auth:
         envvars += ' ELASTIC_OPBEANS_AUTH="' + args.opbeans_auth + '"'
 
-    print("using envvars = " + envvars)
+    print("using environmental variables:\n" + envvars)
     xcodeProjectPath = os.path.join(os.path.dirname(__file__),"..")
-    cmd = "pushd " + xcodeProjectPath + " && "  + envvars + " xcodebuild clean test  -scheme \"ios-integration-testing (iOS)\" -destination \"" + args.destination + "\""
+    cmd = "pushd " + xcodeProjectPath + " && "  + envvars + " xcodebuild clean test  -scheme \"opbeans-swift (iOS)\" -destination \"" + args.destination + "\""
     print(cmd)
     os.system(cmd)

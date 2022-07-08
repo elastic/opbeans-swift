@@ -33,14 +33,29 @@ class opbeans_swift_loadgenerator: XCTestCase {
         
         let app = XCUIApplication()
         app.launch()
-        app.tables.cells["Brazil Verde, Italian Roast, Dark Roast Coffee"].children(matching: .other).element(boundBy: 0).children(matching: .other).element.tap()
-        _ = app.wait(for: .runningForeground, timeout: 1.0)
-        let ttgc7swiftui19uihostingNavigationBar = app.navigationBars["_TtGC7SwiftUI19UIHosting"]
-        _ = app.wait(for: .runningForeground, timeout: 1.0)
-        ttgc7swiftui19uihostingNavigationBar.children(matching: .other).element.children(matching: .other).element.children(matching: .button).element.tap()
-        ttgc7swiftui19uihostingNavigationBar.buttons["Opbeans Coffee"].tap()
-        app.navigationBars["Opbeans Coffee"].children(matching: .other).element(boundBy: 1).children(matching: .other).element.children(matching: .button).element.tap()
-        app.navigationBars["Cart"].buttons["Checkout"].tap()
+        
+        // select product from list
+        let tableCell = app.tables.cells["Brazil Verde, Italian Roast, Dark Roast Coffee"]
+        _ = tableCell.waitForExistence(timeout: 3)
+        tableCell.tap()
+        
+        //add item to cart
+        let addToCart = app.navigationBars.children(matching: .other)
+        _ = addToCart.element.waitForExistence(timeout: 3)
+        addToCart.element.tap()
+        
+        // return to product list
+        app.navigationBars.buttons["Opbeans Coffee"].tap()
+        
+        // go to the cart
+        let viewCart = app.navigationBars["Opbeans Coffee"].children(matching: .other).element(boundBy: 1)
+        _ = viewCart.waitForExistence(timeout: 3)
+        viewCart.tap()
+        
+        let checkout = app.navigationBars["Cart"].buttons["Checkout"]
+        _ = checkout.waitForExistence(timeout: 3)
+        checkout.tap()
+        
         _ = app.wait(for: .runningBackground, timeout: 5)
     }
 }

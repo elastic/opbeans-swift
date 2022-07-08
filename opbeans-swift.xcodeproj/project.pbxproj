@@ -115,6 +115,7 @@
 		B306775E9D77A17AFA177BEA /* opbeans-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "opbeans-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B306789693285C92CDE27F9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B30679BF7B318E45890C7F0A /* opbeans-swift-App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "opbeans-swift-App.swift"; sourceTree = "<group>"; };
+		B3067A4B21B53EBE57759753 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = scripts/README.md; sourceTree = "<group>"; };
 		B3067DF89329E434CB23BE62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		B3067EC5FD65EA83599BC918 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		F60686D627AC8AF500410A9F /* CartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
@@ -191,6 +192,7 @@
 				B3067DCC134C49E1663C5033 /* iOS */,
 				B306766FBA622015B4C07DF1 /* macOS */,
 				F63C8FC425A4F0520053EFEC /* Frameworks */,
+				B3067A4B21B53EBE57759753 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};

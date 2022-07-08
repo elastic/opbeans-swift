@@ -31,16 +31,6 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F618FF0326965008008240A6"
-               BuildableName = "opbeans-swift UITests.xctest"
-               BlueprintName = "opbeans-swift UITests"
-               ReferencedContainer = "container:opbeans-swift.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "F6343FF72876271700760527"
                BuildableName = "opbeans-swift-loadgenerator.xctest"
                BlueprintName = "opbeans-swift-loadgenerator"
