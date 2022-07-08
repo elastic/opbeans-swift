@@ -27,13 +27,13 @@
 		F6343FF0286E27F900760527 /* OrderDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6343FEE286E27F900760527 /* OrderDetails.swift */; };
 		F6343FF2286E589900760527 /* LineItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6343FF1286E589900760527 /* LineItemRow.swift */; };
 		F6343FF3286E589900760527 /* LineItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6343FF1286E589900760527 /* LineItemRow.swift */; };
+		F6343FFB2876271700760527 /* opbeans_swift_loadgenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6343FFA2876271700760527 /* opbeans_swift_loadgenerator.swift */; };
 		F6396526278E50C900B3C327 /* CPUSampler in Frameworks */ = {isa = PBXBuildFile; productRef = F6396525278E50C900B3C327 /* CPUSampler */; };
 		F6396528278E50C900B3C327 /* MemorySampler in Frameworks */ = {isa = PBXBuildFile; productRef = F6396527278E50C900B3C327 /* MemorySampler */; };
 		F639652A278E50C900B3C327 /* iOSAgent in Frameworks */ = {isa = PBXBuildFile; productRef = F6396529278E50C900B3C327 /* iOSAgent */; };
 		F639652D278E50FE00B3C327 /* NetworkStatus in Frameworks */ = {isa = PBXBuildFile; productRef = F639652C278E50FE00B3C327 /* NetworkStatus */; };
 		F639652F278E50FE00B3C327 /* OpenTelemetryApi in Frameworks */ = {isa = PBXBuildFile; productRef = F639652E278E50FE00B3C327 /* OpenTelemetryApi */; };
 		F6396531278E50FE00B3C327 /* OpenTelemetrySdk in Frameworks */ = {isa = PBXBuildFile; productRef = F6396530278E50FE00B3C327 /* OpenTelemetrySdk */; };
-		F6396534278F417500B3C327 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6396533278F417500B3C327 /* CoreTelephony.framework */; };
 		F63C8FA225A39FB50053EFEC /* apiData.json in Resources */ = {isa = PBXBuildFile; fileRef = F63C8FA125A39FB50053EFEC /* apiData.json */; };
 		F63C8FA325A39FB50053EFEC /* apiData.json in Resources */ = {isa = PBXBuildFile; fileRef = F63C8FA125A39FB50053EFEC /* apiData.json */; };
 		F63C8FA725A3A1370053EFEC /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63C8FA625A3A1370053EFEC /* API.swift */; };
@@ -60,6 +60,7 @@
 		F657A6EF286CEB0400EEED48 /* MyOrdersList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F657A6ED286CEB0400EEED48 /* MyOrdersList.swift */; };
 		F657A6F1286D124B00EEED48 /* MyOrderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F657A6F0286D124A00EEED48 /* MyOrderRow.swift */; };
 		F657A6F2286D124B00EEED48 /* MyOrderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F657A6F0286D124A00EEED48 /* MyOrderRow.swift */; };
+		F66060D0287737CB008D3C2D /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F66060CF287737CB008D3C2D /* CoreTelephony.framework */; };
 		F689113727BAE881003B2F39 /* AdminMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F689113627BAE881003B2F39 /* AdminMenu.swift */; };
 		F689113827BAE881003B2F39 /* AdminMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F689113627BAE881003B2F39 /* AdminMenu.swift */; };
 		F698F6B825E859040082EB46 /* iOSAgent in Embed Frameworks */ = {isa = PBXBuildFile; productRef = F698F6B625E859040082EB46 /* iOSAgent */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -72,6 +73,16 @@
 		F6E89ADA27AB027500863899 /* ProductDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E89AD927AB027500863899 /* ProductDetail.swift */; };
 		F6E89ADB27AB027500863899 /* ProductDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E89AD927AB027500863899 /* ProductDetail.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F6343FFE2876271700760527 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3067A86DC325FA37A530775 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3067BA6271588011580AB9B;
+			remoteInfo = "opbeans-swift (iOS)";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		F6BB03A526695FE100850589 /* Embed Frameworks */ = {
@@ -104,6 +115,7 @@
 		B306775E9D77A17AFA177BEA /* opbeans-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "opbeans-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B306789693285C92CDE27F9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B30679BF7B318E45890C7F0A /* opbeans-swift-App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "opbeans-swift-App.swift"; sourceTree = "<group>"; };
+		B3067A4B21B53EBE57759753 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = scripts/README.md; sourceTree = "<group>"; };
 		B3067DF89329E434CB23BE62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		B3067EC5FD65EA83599BC918 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		F60686D627AC8AF500410A9F /* CartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
@@ -113,6 +125,8 @@
 		F63389D6260A99EF00EA686B /* delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = delegate.swift; sourceTree = "<group>"; };
 		F6343FEE286E27F900760527 /* OrderDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetails.swift; sourceTree = "<group>"; };
 		F6343FF1286E589900760527 /* LineItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineItemRow.swift; sourceTree = "<group>"; };
+		F6343FF82876271700760527 /* opbeans-swift-loadgenerator.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "opbeans-swift-loadgenerator.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6343FFA2876271700760527 /* opbeans_swift_loadgenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = opbeans_swift_loadgenerator.swift; sourceTree = "<group>"; };
 		F6396533278F417500B3C327 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/System/Library/Frameworks/CoreTelephony.framework; sourceTree = DEVELOPER_DIR; };
 		F63C8FA125A39FB50053EFEC /* apiData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = apiData.json; sourceTree = "<group>"; };
 		F63C8FA625A3A1370053EFEC /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -128,6 +142,7 @@
 		F657A6ED286CEB0400EEED48 /* MyOrdersList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrdersList.swift; sourceTree = "<group>"; };
 		F657A6F0286D124A00EEED48 /* MyOrderRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrderRow.swift; sourceTree = "<group>"; };
 		F65C207D25AF60AD00477A78 /* apm-agent-ios */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "apm-agent-ios"; path = "../apm-agent-ios"; sourceTree = "<group>"; };
+		F66060CF287737CB008D3C2D /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.5.sdk/System/Library/Frameworks/CoreTelephony.framework; sourceTree = DEVELOPER_DIR; };
 		F689113627BAE881003B2F39 /* AdminMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminMenu.swift; sourceTree = "<group>"; };
 		F6E89AD327A9BB3C00863899 /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 		F6E89AD627A9D95300863899 /* ProductRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRow.swift; sourceTree = "<group>"; };
@@ -148,7 +163,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6396534278F417500B3C327 /* CoreTelephony.framework in Frameworks */,
+				F66060D0287737CB008D3C2D /* CoreTelephony.framework in Frameworks */,
 				F639652A278E50C900B3C327 /* iOSAgent in Frameworks */,
 				F6396528278E50C900B3C327 /* MemorySampler in Frameworks */,
 				F6396526278E50C900B3C327 /* CPUSampler in Frameworks */,
@@ -158,17 +173,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F6343FF52876271700760527 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		B306700B5C8E1847D4223874 = {
 			isa = PBXGroup;
 			children = (
+				F6343FF92876271700760527 /* opbeans-swift-loadgenerator */,
 				B3067D0B78C5A8290FDDA265 /* Products */,
 				B3067B91075DD34A7776D8E6 /* Shared */,
 				B3067DCC134C49E1663C5033 /* iOS */,
 				B306766FBA622015B4C07DF1 /* macOS */,
 				F63C8FC425A4F0520053EFEC /* Frameworks */,
+				B3067A4B21B53EBE57759753 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -200,6 +224,7 @@
 			children = (
 				B306775E9D77A17AFA177BEA /* opbeans-swift.app */,
 				B30675A2510458E67DBA0D51 /* opbeans-swift.app */,
+				F6343FF82876271700760527 /* opbeans-swift-loadgenerator.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -210,6 +235,14 @@
 				B3067206CF59CE86B46438FB /* Info.plist */,
 			);
 			path = iOS;
+			sourceTree = "<group>";
+		};
+		F6343FF92876271700760527 /* opbeans-swift-loadgenerator */ = {
+			isa = PBXGroup;
+			children = (
+				F6343FFA2876271700760527 /* opbeans_swift_loadgenerator.swift */,
+			);
+			path = "opbeans-swift-loadgenerator";
 			sourceTree = "<group>";
 		};
 		F63C8FB225A3A3980053EFEC /* Resources */ = {
@@ -236,8 +269,8 @@
 		F63C8FBC25A3A41F0053EFEC /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F6E89AD627A9D95300863899 /* ProductRow.swift */,
 				F6E89AD927AB027500863899 /* ProductDetail.swift */,
+				F6E89AD627A9D95300863899 /* ProductRow.swift */,
 				F64D79CB27BC3056000CBB28 /* AdminProductRow.swift */,
 				F60686D927B1AE0600410A9F /* CartDetails.swift */,
 				F60686DC27B1B68300410A9F /* CartRow.swift */,
@@ -260,6 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				F6396533278F417500B3C327 /* CoreTelephony.framework */,
+				F66060CF287737CB008D3C2D /* CoreTelephony.framework */,
 				F65C207D25AF60AD00477A78 /* apm-agent-ios */,
 			);
 			name = Frameworks;
@@ -316,17 +350,39 @@
 			productReference = B306775E9D77A17AFA177BEA /* opbeans-swift.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F6343FF72876271700760527 /* opbeans-swift-loadgenerator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F63440002876271700760527 /* Build configuration list for PBXNativeTarget "opbeans-swift-loadgenerator" */;
+			buildPhases = (
+				F6343FF42876271700760527 /* Sources */,
+				F6343FF52876271700760527 /* Frameworks */,
+				F6343FF62876271700760527 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F6343FFF2876271700760527 /* PBXTargetDependency */,
+			);
+			name = "opbeans-swift-loadgenerator";
+			productName = "opbeans-swift-loadgenerator";
+			productReference = F6343FF82876271700760527 /* opbeans-swift-loadgenerator.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		B3067A86DC325FA37A530775 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1240;
+				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1230;
 				TargetAttributes = {
 					B3067BA6271588011580AB9B = {
 						DevelopmentTeam = 2BT3HPN62Z;
+					};
+					F6343FF72876271700760527 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = B3067BA6271588011580AB9B;
 					};
 				};
 			};
@@ -349,6 +405,7 @@
 			targets = (
 				B3067BA6271588011580AB9B /* opbeans-swift (iOS) */,
 				B30671C6020F7BC205F1DE40 /* opbeans-swift (macOS) */,
+				F6343FF72876271700760527 /* opbeans-swift-loadgenerator */,
 			);
 		};
 /* End PBXProject section */
@@ -369,6 +426,13 @@
 			files = (
 				F63C8FA325A39FB50053EFEC /* apiData.json in Resources */,
 				B30674A85E340CE95D4CB9C4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6343FF62876271700760527 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,7 +503,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F6343FF42876271700760527 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6343FFB2876271700760527 /* opbeans_swift_loadgenerator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F6343FFF2876271700760527 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = B3067BA6271588011580AB9B /* opbeans-swift (iOS) */;
+			targetProxy = F6343FFE2876271700760527 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		B306721EA73EA82FA5201D50 /* Debug */ = {
@@ -590,7 +671,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "co.elastic.opbeans-swift";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.elastic.opbeans-swift";
 				PRODUCT_NAME = "opbeans-swift";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
@@ -637,10 +718,55 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "co.elastic.opbeans-swift";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.elastic.opbeans-swift";
 				PRODUCT_NAME = "opbeans-swift";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		F63440012876271700760527 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2BT3HPN62Z;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.elastic.opbeans-swift-loadgenerator";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "opbeans-swift (iOS)";
+			};
+			name = Debug;
+		};
+		F63440022876271700760527 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2BT3HPN62Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.elastic.opbeans-swift-loadgenerator";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "opbeans-swift (iOS)";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -670,6 +796,15 @@
 			buildConfigurations = (
 				B3067BAF94BD50F54B2BFDCB /* Debug */,
 				B30679454D30689AAD737247 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F63440002876271700760527 /* Build configuration list for PBXNativeTarget "opbeans-swift-loadgenerator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F63440012876271700760527 /* Debug */,
+				F63440022876271700760527 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
