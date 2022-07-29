@@ -25,7 +25,7 @@ struct AllProductsList: View {
             }
         }.onAppear  {
             modelData.loadProducts()
-        }
+        }.navigationTitle("All Products")
     }
         
 }

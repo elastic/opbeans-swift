@@ -24,7 +24,7 @@ struct AllCustomersList: View {
             }
         }.onAppear  {
             modelData.loadCustomer()
-        }
+        }.navigationTitle("All Customers")
     }
         
 }

@@ -13,6 +13,7 @@
 //   limitations under the License.
 
 import SwiftUI
+import iOSAgent
 
 struct OrderDetail: View {
     var order : OrderLine
@@ -34,8 +35,9 @@ struct OrderDetail: View {
                     .foregroundColor(.gray)
                     .font(.caption)
             }
-        }
+        }.reportName("Order Detail - view appearing")
     }
+   
 }
 
 struct OrderDetail_Previews: PreviewProvider {
