@@ -25,7 +25,7 @@ struct AllOrdersList: View {
             }
         }.onAppear  {
             modelData.loadOrders()
-        }
+        }.navigationTitle("All Orders")
     }
         
 }

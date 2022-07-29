@@ -13,7 +13,8 @@
 //   limitations under the License.
 
 import SwiftUI
-
+import OpenTelemetryApi
+import OpenTelemetrySdk
 struct AdminMenu : View {
     @EnvironmentObject var modelData : ModelData
     
@@ -111,9 +112,11 @@ struct AdminMenu : View {
             UserView()
                 .environmentObject(modelData)
         }
+        .navigationTitle("Admin Menu")
         .padding()
         .frame(maxWidth: .infinity, alignment: .leading)
         .edgesIgnoringSafeArea(.all)
+
     }
 }
 
