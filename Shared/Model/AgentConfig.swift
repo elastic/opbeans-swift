@@ -14,8 +14,8 @@
 
 import Foundation
 
-struct API: Hashable, Codable {
+
+struct AgentConfig: Hashable, Codable {
     var url : String
-    var username: String?
-    var password: String?
+    var token : String?
 }

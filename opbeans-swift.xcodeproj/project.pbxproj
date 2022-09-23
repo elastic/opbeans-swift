@@ -64,6 +64,9 @@
 		F689113727BAE881003B2F39 /* AdminMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F689113627BAE881003B2F39 /* AdminMenu.swift */; };
 		F689113827BAE881003B2F39 /* AdminMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F689113627BAE881003B2F39 /* AdminMenu.swift */; };
 		F698F6B825E859040082EB46 /* iOSAgent in Embed Frameworks */ = {isa = PBXBuildFile; productRef = F698F6B625E859040082EB46 /* iOSAgent */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		F69B9E7328DD2446003CEB5B /* AgentConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69B9E7228DD2446003CEB5B /* AgentConfig.swift */; };
+		F69B9E7428DD25D7003CEB5B /* agent-conf.json in Resources */ = {isa = PBXBuildFile; fileRef = F69B9E7128DD17C3003CEB5B /* agent-conf.json */; };
+		F69B9E7528DE54B3003CEB5B /* AgentConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69B9E7228DD2446003CEB5B /* AgentConfig.swift */; };
 		F6BC277426791D460081C1E8 /* libiOSAgent in Frameworks */ = {isa = PBXBuildFile; productRef = F6BC277326791D460081C1E8 /* libiOSAgent */; };
 		F6BC2775267A83FA0081C1E8 /* iOSAgent in Frameworks */ = {isa = PBXBuildFile; productRef = F698F6B625E859040082EB46 /* iOSAgent */; };
 		F6E89AD427A9BB3C00863899 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E89AD327A9BB3C00863899 /* Products.swift */; };
@@ -125,9 +128,8 @@
 		F63389D6260A99EF00EA686B /* delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = delegate.swift; sourceTree = "<group>"; };
 		F6343FEE286E27F900760527 /* OrderDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetails.swift; sourceTree = "<group>"; };
 		F6343FF1286E589900760527 /* LineItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineItemRow.swift; sourceTree = "<group>"; };
-		F6343FF82876271700760527 /* opbeans-swift-loadgenerator.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "opbeans-swift-loadgenerator.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6343FF82876271700760527 /* opbeans-swift.XCUITest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "opbeans-swift.XCUITest.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6343FFA2876271700760527 /* opbeans_swift_loadgenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = opbeans_swift_loadgenerator.swift; sourceTree = "<group>"; };
-		F6396533278F417500B3C327 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/System/Library/Frameworks/CoreTelephony.framework; sourceTree = DEVELOPER_DIR; };
 		F63C8FA125A39FB50053EFEC /* apiData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = apiData.json; sourceTree = "<group>"; };
 		F63C8FA625A3A1370053EFEC /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		F63C8FAD25A3A1AD0053EFEC /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
@@ -144,6 +146,8 @@
 		F65C207D25AF60AD00477A78 /* apm-agent-ios */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "apm-agent-ios"; path = "../apm-agent-ios"; sourceTree = "<group>"; };
 		F66060CF287737CB008D3C2D /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.5.sdk/System/Library/Frameworks/CoreTelephony.framework; sourceTree = DEVELOPER_DIR; };
 		F689113627BAE881003B2F39 /* AdminMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminMenu.swift; sourceTree = "<group>"; };
+		F69B9E7128DD17C3003CEB5B /* agent-conf.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "agent-conf.json"; sourceTree = "<group>"; };
+		F69B9E7228DD2446003CEB5B /* AgentConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentConfig.swift; sourceTree = "<group>"; };
 		F6E89AD327A9BB3C00863899 /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 		F6E89AD627A9D95300863899 /* ProductRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRow.swift; sourceTree = "<group>"; };
 		F6E89AD927AB027500863899 /* ProductDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetail.swift; sourceTree = "<group>"; };
@@ -224,7 +228,7 @@
 			children = (
 				B306775E9D77A17AFA177BEA /* opbeans-swift.app */,
 				B30675A2510458E67DBA0D51 /* opbeans-swift.app */,
-				F6343FF82876271700760527 /* opbeans-swift-loadgenerator.xctest */,
+				F6343FF82876271700760527 /* opbeans-swift.XCUITest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -249,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				F63C8FA125A39FB50053EFEC /* apiData.json */,
+				F69B9E7128DD17C3003CEB5B /* agent-conf.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -258,6 +263,7 @@
 			children = (
 				F63C8FAD25A3A1AD0053EFEC /* ModelData.swift */,
 				F63C8FA625A3A1370053EFEC /* API.swift */,
+				F69B9E7228DD2446003CEB5B /* AgentConfig.swift */,
 				F6E89AD327A9BB3C00863899 /* Products.swift */,
 				F60686D627AC8AF500410A9F /* CartItem.swift */,
 				F60686DF27B31F1000410A9F /* Order.swift */,
@@ -292,7 +298,6 @@
 		F63C8FC425A4F0520053EFEC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F6396533278F417500B3C327 /* CoreTelephony.framework */,
 				F66060CF287737CB008D3C2D /* CoreTelephony.framework */,
 				F65C207D25AF60AD00477A78 /* apm-agent-ios */,
 			);
@@ -350,9 +355,9 @@
 			productReference = B306775E9D77A17AFA177BEA /* opbeans-swift.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F6343FF72876271700760527 /* opbeans-swift-loadgenerator */ = {
+		F6343FF72876271700760527 /* opbeans-swift.XCUITest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F63440002876271700760527 /* Build configuration list for PBXNativeTarget "opbeans-swift-loadgenerator" */;
+			buildConfigurationList = F63440002876271700760527 /* Build configuration list for PBXNativeTarget "opbeans-swift.XCUITest" */;
 			buildPhases = (
 				F6343FF42876271700760527 /* Sources */,
 				F6343FF52876271700760527 /* Frameworks */,
@@ -363,9 +368,9 @@
 			dependencies = (
 				F6343FFF2876271700760527 /* PBXTargetDependency */,
 			);
-			name = "opbeans-swift-loadgenerator";
+			name = "opbeans-swift.XCUITest";
 			productName = "opbeans-swift-loadgenerator";
-			productReference = F6343FF82876271700760527 /* opbeans-swift-loadgenerator.xctest */;
+			productReference = F6343FF82876271700760527 /* opbeans-swift.XCUITest.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -405,7 +410,7 @@
 			targets = (
 				B3067BA6271588011580AB9B /* opbeans-swift (iOS) */,
 				B30671C6020F7BC205F1DE40 /* opbeans-swift (macOS) */,
-				F6343FF72876271700760527 /* opbeans-swift-loadgenerator */,
+				F6343FF72876271700760527 /* opbeans-swift.XCUITest */,
 			);
 		};
 /* End PBXProject section */
@@ -415,6 +420,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F69B9E7428DD25D7003CEB5B /* agent-conf.json in Resources */,
 				F63C8FA225A39FB50053EFEC /* apiData.json in Resources */,
 				B3067A13AEA842BE8B383256 /* Assets.xcassets in Resources */,
 			);
@@ -464,6 +470,7 @@
 				F60686D727AC8AF500410A9F /* CartItem.swift in Sources */,
 				F6E89ADA27AB027500863899 /* ProductDetail.swift in Sources */,
 				F60686E027B31F1000410A9F /* Order.swift in Sources */,
+				F69B9E7328DD2446003CEB5B /* AgentConfig.swift in Sources */,
 				F64D79C927BB1A4D000CBB28 /* Customer.swift in Sources */,
 				F60686DD27B1B68300410A9F /* CartRow.swift in Sources */,
 				B3067D41A3723D784A3F3CAF /* ContentView.swift in Sources */,
@@ -496,6 +503,7 @@
 				F60686D827AC8AF500410A9F /* CartItem.swift in Sources */,
 				F6E89ADB27AB027500863899 /* ProductDetail.swift in Sources */,
 				F60686E127B31F1000410A9F /* Order.swift in Sources */,
+				F69B9E7528DE54B3003CEB5B /* AgentConfig.swift in Sources */,
 				F64D79CA27BB1A4D000CBB28 /* Customer.swift in Sources */,
 				F60686DE27B1B68300410A9F /* CartRow.swift in Sources */,
 				B3067F950812D9FFEBB17DB5 /* ContentView.swift in Sources */,
@@ -800,7 +808,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F63440002876271700760527 /* Build configuration list for PBXNativeTarget "opbeans-swift-loadgenerator" */ = {
+		F63440002876271700760527 /* Build configuration list for PBXNativeTarget "opbeans-swift.XCUITest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F63440012876271700760527 /* Debug */,
@@ -816,7 +824,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/elastic/apm-agent-ios";
 			requirement = {
-				branch = main;
+				branch = "agent-start-refactor";
 				kind = branch;
 			};
 		};
