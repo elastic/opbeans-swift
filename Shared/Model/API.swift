@@ -16,6 +16,5 @@ import Foundation
 
 struct API: Hashable, Codable {
     var url : String
-    var username: String?
-    var password: String?
+    var auth: String?
 }

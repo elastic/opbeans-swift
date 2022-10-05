@@ -1,6 +1,4 @@
-
 {
-    "url" : "http://localhost:3000",
-    "username" : null,
-    "password" : null
+    "url": "http://localhost:3000",
+    "auth": null
 }

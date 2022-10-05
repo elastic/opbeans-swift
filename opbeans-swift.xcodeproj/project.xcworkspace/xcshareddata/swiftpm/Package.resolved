@@ -11,15 +11,6 @@
         }
       },
       {
-        "package": "opentelemetry-swift",
-        "repositoryURL": "https://github.com/open-telemetry/opentelemetry-swift",
-        "state": {
-          "branch": null,
-          "revision": "b7700edee06d1f047d6983fe4c4cede9f3e47567",
-          "version": "1.1.7"
-        }
-      },
-      {
         "package": "Opentracing",
         "repositoryURL": "https://github.com/undefinedlabs/opentracing-objc",
         "state": {

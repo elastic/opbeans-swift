@@ -134,12 +134,10 @@ func buildUrl(path: String) throws -> URL {
 func getAPIData(path: String) async throws -> Data {
     var request = try URLRequest( url:buildUrl(path: path))
     
-    if let user = api.username, let password = api.password {
-        let auth = "\(user):\(password)"
-        if let data = auth.data(using: .utf8 ){
-            request.addValue("Basic \(data.base64EncodedString())", forHTTPHeaderField: "Authorization")
-        }
+    if let auth = api.auth {
+            request.addValue("Basic \(auth)", forHTTPHeaderField: "Authorization")
     }
+
     
     let (data, _) = try await URLSession.shared.data(for: request)
     return data
@@ -156,11 +154,8 @@ func sendCheckout(userId: Int, items: [CartItem]) async throws -> URLResponse {
     let json = try JSONEncoder().encode(Order(customer_id: userId, lines: lines))
     request.httpBody = json
     print(String(decoding:json, as: UTF8.self))
-    if let user = api.username, let password = api.password {
-        let auth = "\(user):\(password)"
-        if let data = auth.data(using: .utf8 ){
-            request.addValue("Basic \(data.base64EncodedString())", forHTTPHeaderField: "Authorization")
-        }
+    if let auth = api.auth {
+        request.addValue("Basic \(auth)", forHTTPHeaderField: "Authorization")
     }
     
     let (_, response) = try await URLSession.shared.data(for:request)
