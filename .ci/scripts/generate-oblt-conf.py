@@ -3,6 +3,7 @@
 import argparse
 import json
 import os
+import zipfile
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='run ios-integration-testing with generated OTEL_RESOURCE_ATTRIUTES_ENV')
@@ -10,6 +11,7 @@ if __name__ == '__main__':
     parser.add_argument('--secret-token', help='secret auth token for using with token auth of apm-server')
     parser.add_argument('--opbeans-node', help='host name of obbeans service to use for requests. include port number')
     parser.add_argument('--opbeans-auth', help='base64 encoded user:password used for basic auth')
+    parser.add_argument('--saucelabs-auth', help='used to upload built artifact to saucelabs')
 
     args = parser.parse_args()
 
@@ -18,6 +20,11 @@ if __name__ == '__main__':
 
     opbeans_node = "http://localhost:3000"
     opbeans_auth = None
+
+    saucelabs_auth = ""
+
+    if args.saucelabs_auth:
+        saucelabs_auth = args.saucelabs_auth
 
     if args.apm_server:
         apm_server = args.apm_server
@@ -56,6 +63,10 @@ if __name__ == '__main__':
 
     cmd = "pushd \"" + path + "/../..\"" + " && " + "xcodebuild clean build -scheme \"opbeans-swift (iOS)\" -destination \"platform=iOS Simulator,name=iPhone 8\" -derivedDataPath ./DerivedData/ "
     os.system(cmd)
-    print("./opbeans-swift/DerivedData/Build/Products/Debug-iphonesimulator/opbeans-swift.app/")
+    with zipfile.zipfile("opbeans_swift.app.zip", mode="w") as archive:
+        archive.write("./opbeans-swift/DerivedData/Build/Products/Debug-iphonesimulator/opbeans-swift.app/")
+
+    upload_cmd =" curl -u " + saucelabs_auth + " --location --request POST https://api.us-west-1.saucelabs.com/v1/storage/upload --form payload=@\"opbeans_swift.app.zip\" --form 'name=\"opbeans_swift.app.zip\"'"
+
 
 
