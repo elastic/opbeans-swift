@@ -61,12 +61,5 @@ if __name__ == '__main__':
     with open(api_data, "w") as outfile:
         outfile.write(json_object)
 
-    cmd = "pushd \"" + path + "/../..\"" + " && " + "xcodebuild clean build -scheme \"opbeans-swift (iOS)\" -destination \"platform=iOS Simulator,name=iPhone 8\" -derivedDataPath ./DerivedData/ "
-    os.system(cmd)
-    with zipfile.zipfile("opbeans_swift.app.zip", mode="w") as archive:
-        archive.write("./opbeans-swift/DerivedData/Build/Products/Debug-iphonesimulator/opbeans-swift.app/")
-
-    upload_cmd =" curl -u " + saucelabs_auth + " --location --request POST https://api.us-west-1.saucelabs.com/v1/storage/upload --form payload=@\"opbeans_swift.app.zip\" --form 'name=\"opbeans_swift.app.zip\"'"
-
 
 

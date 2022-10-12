@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B3067143F1EE3CA025B9A852 /* generate-oblt-conf.py in Resources */ = {isa = PBXBuildFile; fileRef = B306742D8C33261CB52393D2 /* generate-oblt-conf.py */; };
 		B30674A85E340CE95D4CB9C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B306789693285C92CDE27F9D /* Assets.xcassets */; };
 		B30675D94736ADF6E39D4B00 /* opbeans-swift-App.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30679BF7B318E45890C7F0A /* opbeans-swift-App.swift */; };
 		B3067A13AEA842BE8B383256 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B306789693285C92CDE27F9D /* Assets.xcassets */; };
@@ -67,6 +66,8 @@
 		F69B9E7528DE54B3003CEB5B /* AgentConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69B9E7228DD2446003CEB5B /* AgentConfig.swift */; };
 		F6BC277426791D460081C1E8 /* libiOSAgent in Frameworks */ = {isa = PBXBuildFile; productRef = F6BC277326791D460081C1E8 /* libiOSAgent */; };
 		F6BC2775267A83FA0081C1E8 /* iOSAgent in Frameworks */ = {isa = PBXBuildFile; productRef = F698F6B625E859040082EB46 /* iOSAgent */; };
+		F6C194F828F6260A00177A42 /* agent-conf.json in Resources */ = {isa = PBXBuildFile; fileRef = F6C194F628F6260A00177A42 /* agent-conf.json */; };
+		F6C194F928F6260A00177A42 /* apiData.json in Resources */ = {isa = PBXBuildFile; fileRef = F6C194F728F6260A00177A42 /* apiData.json */; };
 		F6E89AD427A9BB3C00863899 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E89AD327A9BB3C00863899 /* Products.swift */; };
 		F6E89AD527A9BB3C00863899 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E89AD327A9BB3C00863899 /* Products.swift */; };
 		F6E89AD727A9D95300863899 /* ProductRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E89AD627A9D95300863899 /* ProductRow.swift */; };
@@ -145,6 +146,8 @@
 		F66060CF287737CB008D3C2D /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.5.sdk/System/Library/Frameworks/CoreTelephony.framework; sourceTree = DEVELOPER_DIR; };
 		F689113627BAE881003B2F39 /* AdminMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminMenu.swift; sourceTree = "<group>"; };
 		F69B9E7228DD2446003CEB5B /* AgentConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentConfig.swift; sourceTree = "<group>"; };
+		F6C194F628F6260A00177A42 /* agent-conf.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "agent-conf.json"; sourceTree = "<group>"; };
+		F6C194F728F6260A00177A42 /* apiData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = apiData.json; sourceTree = "<group>"; };
 		F6E89AD327A9BB3C00863899 /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 		F6E89AD627A9D95300863899 /* ProductRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRow.swift; sourceTree = "<group>"; };
 		F6E89AD927AB027500863899 /* ProductDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetail.swift; sourceTree = "<group>"; };
@@ -250,6 +253,8 @@
 		F63C8FB225A3A3980053EFEC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F6C194F628F6260A00177A42 /* agent-conf.json */,
+				F6C194F728F6260A00177A42 /* apiData.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -413,8 +418,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6C194F928F6260A00177A42 /* apiData.json in Resources */,
 				B3067A13AEA842BE8B383256 /* Assets.xcassets in Resources */,
-				B3067143F1EE3CA025B9A852 /* generate-oblt-conf.py in Resources */,
+				F6C194F828F6260A00177A42 /* agent-conf.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,7 +534,7 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CURRENT_PROJECT_VERSION = 1.0;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 2BT3HPN62Z;
 				DISABLE_DIAMOND_PROBLEM_DIAGNOSTIC = 1;
 				ENABLE_PREVIEWS = YES;
@@ -685,7 +691,7 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CURRENT_PROJECT_VERSION = 1.0;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 2BT3HPN62Z;
 				DISABLE_DIAMOND_PROBLEM_DIAGNOSTIC = 1;
 				ENABLE_PREVIEWS = YES;
@@ -828,7 +834,7 @@
 			repositoryURL = "https://github.com/open-telemetry/opentelemetry-swift";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				minimumVersion = 1.1.7;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

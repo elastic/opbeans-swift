@@ -1,6 +1,15 @@
 from appium import webdriver
 from appium.webdriver.common.appiumby import AppiumBy
 import time
+import argparse
+
+parser = argparse.ArgumentParser(description='dispatch an appium script to target')
+parser.add_argument('--sauce-url', help='collector address to use, host name or ip acceptable.', default="http://localhost/wd/hub")
+
+args = parser.parse_args()
+
+url = args.sauce_url
+
 
 caps = {}
 caps['platformName'] = "iOS"
@@ -13,8 +22,6 @@ caps['sauce:options'] = {}
 caps['sauce:options']['build'] = 'test'
 caps['sauce:options']['name'] = 'opbeans-swift'
 
-#url = "http://localhost:4723/wd/hub"
-url = 'https://ondemand.us-west-1.saucelabs.com:443/wd/hub';
 driver = webdriver.Remote(url, caps)
 el1 = driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value="Brazil Verde, Italian Roast, Dark Roast Coffee")
 el1.click()
