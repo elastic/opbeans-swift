@@ -17,34 +17,19 @@ import iOSAgent
 @main
 struct ios_integration_testingApp: App {
     @StateObject private var modelData = ModelData()
+    var agentConfig : AgentConfig = load("agent-conf.json")
     init() {
-        var config = AgentConfiguration()
-        config.collectorHost = "localhost"
-        config.collectorPort = 8200
-        config.collectorTLS = false
-//        config.secretToken = ""
-    
-        let envvars = ProcessInfo.processInfo.environment
-            
-        if let address = envvars["OTEL_COLLECTOR_ADDRESS"], !address.isEmpty  {
-            config.collectorHost = address
+        
+        let builder = AgentConfigBuilder()
+        if let url = URL(string: agentConfig.url ) {
+            _ = builder.withURL(url)
+        }
+        if let token = agentConfig.token, !token.isEmpty {
+            _ = builder.withSecretToken(token)
         }
         
-        if let port = envvars["OTEL_COLLECTOR_PORT"], !port.isEmpty {
-            if let parsedPort = Int(port) {
-                config.collectorPort = parsedPort
-            }
-        }
-    
-        if let tls = envvars["OTEL_COLLECTOR_TLS"], !tls.isEmpty {
-            if let parsedTls = Bool(tls) {
-                config.collectorTLS = parsedTls
-            }
-        }
+        var config = builder.build()
 
-        if let token = envvars["ELASTIC_SECRET_TOKEN"], !token.isEmpty {
-            config.secretToken = token
-        }
 
         Agent.start(with: config)
         

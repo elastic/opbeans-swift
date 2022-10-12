@@ -119,12 +119,13 @@ func buildCheckoutURL() throws -> URL {
 }
 
 func buildImageUrl(sku: String) -> URL? {
-    return URL(string:"\(api.proto)://\(api.host):\(api.port)/images/products/\(sku).jpg")
+    
+    return URL(string:"\(api.url)/images/products/\(sku).jpg")
 }
 
 func buildUrl(path: String) throws -> URL {
     
-    guard let url = URL(string: "\(api.proto)://\(api.host):\(api.port)/\(path)") else {
+    guard let url = URL(string: "\(api.url)/\(path)") else {
         throw ModelDataError.invalidURL
     }
     return url
@@ -133,10 +134,10 @@ func buildUrl(path: String) throws -> URL {
 func getAPIData(path: String) async throws -> Data {
     var request = try URLRequest( url:buildUrl(path: path))
     
-    // set auth key here
-    if let auth = opbeansAuth, !auth.isEmpty {
-        request.addValue("Basic \(auth)", forHTTPHeaderField: "Authorization")
+    if let auth = api.auth {
+            request.addValue("Basic \(auth)", forHTTPHeaderField: "Authorization")
     }
+
     
     let (data, _) = try await URLSession.shared.data(for: request)
     return data
@@ -153,7 +154,7 @@ func sendCheckout(userId: Int, items: [CartItem]) async throws -> URLResponse {
     let json = try JSONEncoder().encode(Order(customer_id: userId, lines: lines))
     request.httpBody = json
     print(String(decoding:json, as: UTF8.self))
-    if let auth = opbeansAuth, !auth.isEmpty {
+    if let auth = api.auth {
         request.addValue("Basic \(auth)", forHTTPHeaderField: "Authorization")
     }
     

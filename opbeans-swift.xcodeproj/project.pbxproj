@@ -34,8 +34,6 @@
 		F639652D278E50FE00B3C327 /* NetworkStatus in Frameworks */ = {isa = PBXBuildFile; productRef = F639652C278E50FE00B3C327 /* NetworkStatus */; };
 		F639652F278E50FE00B3C327 /* OpenTelemetryApi in Frameworks */ = {isa = PBXBuildFile; productRef = F639652E278E50FE00B3C327 /* OpenTelemetryApi */; };
 		F6396531278E50FE00B3C327 /* OpenTelemetrySdk in Frameworks */ = {isa = PBXBuildFile; productRef = F6396530278E50FE00B3C327 /* OpenTelemetrySdk */; };
-		F63C8FA225A39FB50053EFEC /* apiData.json in Resources */ = {isa = PBXBuildFile; fileRef = F63C8FA125A39FB50053EFEC /* apiData.json */; };
-		F63C8FA325A39FB50053EFEC /* apiData.json in Resources */ = {isa = PBXBuildFile; fileRef = F63C8FA125A39FB50053EFEC /* apiData.json */; };
 		F63C8FA725A3A1370053EFEC /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63C8FA625A3A1370053EFEC /* API.swift */; };
 		F63C8FA825A3A1370053EFEC /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63C8FA625A3A1370053EFEC /* API.swift */; };
 		F63C8FAE25A3A1AD0053EFEC /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63C8FAD25A3A1AD0053EFEC /* ModelData.swift */; };
@@ -64,8 +62,12 @@
 		F689113727BAE881003B2F39 /* AdminMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F689113627BAE881003B2F39 /* AdminMenu.swift */; };
 		F689113827BAE881003B2F39 /* AdminMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F689113627BAE881003B2F39 /* AdminMenu.swift */; };
 		F698F6B825E859040082EB46 /* iOSAgent in Embed Frameworks */ = {isa = PBXBuildFile; productRef = F698F6B625E859040082EB46 /* iOSAgent */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		F69B9E7328DD2446003CEB5B /* AgentConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69B9E7228DD2446003CEB5B /* AgentConfig.swift */; };
+		F69B9E7528DE54B3003CEB5B /* AgentConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69B9E7228DD2446003CEB5B /* AgentConfig.swift */; };
 		F6BC277426791D460081C1E8 /* libiOSAgent in Frameworks */ = {isa = PBXBuildFile; productRef = F6BC277326791D460081C1E8 /* libiOSAgent */; };
 		F6BC2775267A83FA0081C1E8 /* iOSAgent in Frameworks */ = {isa = PBXBuildFile; productRef = F698F6B625E859040082EB46 /* iOSAgent */; };
+		F6C194F828F6260A00177A42 /* agent-conf.json in Resources */ = {isa = PBXBuildFile; fileRef = F6C194F628F6260A00177A42 /* agent-conf.json */; };
+		F6C194F928F6260A00177A42 /* apiData.json in Resources */ = {isa = PBXBuildFile; fileRef = F6C194F728F6260A00177A42 /* apiData.json */; };
 		F6E89AD427A9BB3C00863899 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E89AD327A9BB3C00863899 /* Products.swift */; };
 		F6E89AD527A9BB3C00863899 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E89AD327A9BB3C00863899 /* Products.swift */; };
 		F6E89AD727A9D95300863899 /* ProductRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E89AD627A9D95300863899 /* ProductRow.swift */; };
@@ -111,6 +113,7 @@
 /* Begin PBXFileReference section */
 		B30671A3FAE11909F7F06F85 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B3067206CF59CE86B46438FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		B306742D8C33261CB52393D2 /* generate-oblt-conf.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = "generate-oblt-conf.py"; path = ".ci/scripts/generate-oblt-conf.py"; sourceTree = "<group>"; };
 		B30675A2510458E67DBA0D51 /* opbeans-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "opbeans-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B306775E9D77A17AFA177BEA /* opbeans-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "opbeans-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B306789693285C92CDE27F9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -125,10 +128,8 @@
 		F63389D6260A99EF00EA686B /* delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = delegate.swift; sourceTree = "<group>"; };
 		F6343FEE286E27F900760527 /* OrderDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetails.swift; sourceTree = "<group>"; };
 		F6343FF1286E589900760527 /* LineItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineItemRow.swift; sourceTree = "<group>"; };
-		F6343FF82876271700760527 /* opbeans-swift-loadgenerator.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "opbeans-swift-loadgenerator.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6343FF82876271700760527 /* opbeans-swift.XCUITest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "opbeans-swift.XCUITest.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6343FFA2876271700760527 /* opbeans_swift_loadgenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = opbeans_swift_loadgenerator.swift; sourceTree = "<group>"; };
-		F6396533278F417500B3C327 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/System/Library/Frameworks/CoreTelephony.framework; sourceTree = DEVELOPER_DIR; };
-		F63C8FA125A39FB50053EFEC /* apiData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = apiData.json; sourceTree = "<group>"; };
 		F63C8FA625A3A1370053EFEC /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		F63C8FAD25A3A1AD0053EFEC /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		F64D79BF27BB04F6000CBB28 /* AllProductsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllProductsList.swift; sourceTree = "<group>"; };
@@ -144,6 +145,9 @@
 		F65C207D25AF60AD00477A78 /* apm-agent-ios */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "apm-agent-ios"; path = "../apm-agent-ios"; sourceTree = "<group>"; };
 		F66060CF287737CB008D3C2D /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.5.sdk/System/Library/Frameworks/CoreTelephony.framework; sourceTree = DEVELOPER_DIR; };
 		F689113627BAE881003B2F39 /* AdminMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminMenu.swift; sourceTree = "<group>"; };
+		F69B9E7228DD2446003CEB5B /* AgentConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentConfig.swift; sourceTree = "<group>"; };
+		F6C194F628F6260A00177A42 /* agent-conf.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "agent-conf.json"; sourceTree = "<group>"; };
+		F6C194F728F6260A00177A42 /* apiData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = apiData.json; sourceTree = "<group>"; };
 		F6E89AD327A9BB3C00863899 /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 		F6E89AD627A9D95300863899 /* ProductRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRow.swift; sourceTree = "<group>"; };
 		F6E89AD927AB027500863899 /* ProductDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetail.swift; sourceTree = "<group>"; };
@@ -193,6 +197,7 @@
 				B306766FBA622015B4C07DF1 /* macOS */,
 				F63C8FC425A4F0520053EFEC /* Frameworks */,
 				B3067A4B21B53EBE57759753 /* README.md */,
+				B306742D8C33261CB52393D2 /* generate-oblt-conf.py */,
 			);
 			sourceTree = "<group>";
 		};
@@ -224,7 +229,7 @@
 			children = (
 				B306775E9D77A17AFA177BEA /* opbeans-swift.app */,
 				B30675A2510458E67DBA0D51 /* opbeans-swift.app */,
-				F6343FF82876271700760527 /* opbeans-swift-loadgenerator.xctest */,
+				F6343FF82876271700760527 /* opbeans-swift.XCUITest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -248,7 +253,8 @@
 		F63C8FB225A3A3980053EFEC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F63C8FA125A39FB50053EFEC /* apiData.json */,
+				F6C194F628F6260A00177A42 /* agent-conf.json */,
+				F6C194F728F6260A00177A42 /* apiData.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -258,6 +264,7 @@
 			children = (
 				F63C8FAD25A3A1AD0053EFEC /* ModelData.swift */,
 				F63C8FA625A3A1370053EFEC /* API.swift */,
+				F69B9E7228DD2446003CEB5B /* AgentConfig.swift */,
 				F6E89AD327A9BB3C00863899 /* Products.swift */,
 				F60686D627AC8AF500410A9F /* CartItem.swift */,
 				F60686DF27B31F1000410A9F /* Order.swift */,
@@ -292,7 +299,6 @@
 		F63C8FC425A4F0520053EFEC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F6396533278F417500B3C327 /* CoreTelephony.framework */,
 				F66060CF287737CB008D3C2D /* CoreTelephony.framework */,
 				F65C207D25AF60AD00477A78 /* apm-agent-ios */,
 			);
@@ -350,9 +356,9 @@
 			productReference = B306775E9D77A17AFA177BEA /* opbeans-swift.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F6343FF72876271700760527 /* opbeans-swift-loadgenerator */ = {
+		F6343FF72876271700760527 /* opbeans-swift.XCUITest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F63440002876271700760527 /* Build configuration list for PBXNativeTarget "opbeans-swift-loadgenerator" */;
+			buildConfigurationList = F63440002876271700760527 /* Build configuration list for PBXNativeTarget "opbeans-swift.XCUITest" */;
 			buildPhases = (
 				F6343FF42876271700760527 /* Sources */,
 				F6343FF52876271700760527 /* Frameworks */,
@@ -363,9 +369,9 @@
 			dependencies = (
 				F6343FFF2876271700760527 /* PBXTargetDependency */,
 			);
-			name = "opbeans-swift-loadgenerator";
+			name = "opbeans-swift.XCUITest";
 			productName = "opbeans-swift-loadgenerator";
-			productReference = F6343FF82876271700760527 /* opbeans-swift-loadgenerator.xctest */;
+			productReference = F6343FF82876271700760527 /* opbeans-swift.XCUITest.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -377,9 +383,6 @@
 				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1230;
 				TargetAttributes = {
-					B3067BA6271588011580AB9B = {
-						DevelopmentTeam = 2BT3HPN62Z;
-					};
 					F6343FF72876271700760527 = {
 						CreatedOnToolsVersion = 13.4.1;
 						TestTargetID = B3067BA6271588011580AB9B;
@@ -405,7 +408,7 @@
 			targets = (
 				B3067BA6271588011580AB9B /* opbeans-swift (iOS) */,
 				B30671C6020F7BC205F1DE40 /* opbeans-swift (macOS) */,
-				F6343FF72876271700760527 /* opbeans-swift-loadgenerator */,
+				F6343FF72876271700760527 /* opbeans-swift.XCUITest */,
 			);
 		};
 /* End PBXProject section */
@@ -415,8 +418,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F63C8FA225A39FB50053EFEC /* apiData.json in Resources */,
+				F6C194F928F6260A00177A42 /* apiData.json in Resources */,
 				B3067A13AEA842BE8B383256 /* Assets.xcassets in Resources */,
+				F6C194F828F6260A00177A42 /* agent-conf.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,7 +428,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F63C8FA325A39FB50053EFEC /* apiData.json in Resources */,
 				B30674A85E340CE95D4CB9C4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -464,6 +467,7 @@
 				F60686D727AC8AF500410A9F /* CartItem.swift in Sources */,
 				F6E89ADA27AB027500863899 /* ProductDetail.swift in Sources */,
 				F60686E027B31F1000410A9F /* Order.swift in Sources */,
+				F69B9E7328DD2446003CEB5B /* AgentConfig.swift in Sources */,
 				F64D79C927BB1A4D000CBB28 /* Customer.swift in Sources */,
 				F60686DD27B1B68300410A9F /* CartRow.swift in Sources */,
 				B3067D41A3723D784A3F3CAF /* ContentView.swift in Sources */,
@@ -496,6 +500,7 @@
 				F60686D827AC8AF500410A9F /* CartItem.swift in Sources */,
 				F6E89ADB27AB027500863899 /* ProductDetail.swift in Sources */,
 				F60686E127B31F1000410A9F /* Order.swift in Sources */,
+				F69B9E7528DE54B3003CEB5B /* AgentConfig.swift in Sources */,
 				F64D79CA27BB1A4D000CBB28 /* Customer.swift in Sources */,
 				F60686DE27B1B68300410A9F /* CartRow.swift in Sources */,
 				B3067F950812D9FFEBB17DB5 /* ContentView.swift in Sources */,
@@ -526,20 +531,22 @@
 		B306721EA73EA82FA5201D50 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CURRENT_PROJECT_VERSION = 1.0;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 2BT3HPN62Z;
 				DISABLE_DIAMOND_PROBLEM_DIAGNOSTIC = 1;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = opbeans;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.elastic.opbeans-swift";
+				PRODUCT_BUNDLE_IDENTIFIER = "co.elastic.opbeans-swift";
 				PRODUCT_NAME = "opbeans-swift";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
@@ -634,7 +641,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DISABLE_DIAMOND_PROBLEM_DIAGNOSTIC = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -681,20 +688,22 @@
 		B3067DDBFF4303A0D75BDED0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CURRENT_PROJECT_VERSION = 1.0;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 2BT3HPN62Z;
 				DISABLE_DIAMOND_PROBLEM_DIAGNOSTIC = 1;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = opbeans;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.elastic.opbeans-swift";
+				PRODUCT_BUNDLE_IDENTIFIER = "co.elastic.opbeans-swift";
 				PRODUCT_NAME = "opbeans-swift";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
@@ -800,7 +809,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F63440002876271700760527 /* Build configuration list for PBXNativeTarget "opbeans-swift-loadgenerator" */ = {
+		F63440002876271700760527 /* Build configuration list for PBXNativeTarget "opbeans-swift.XCUITest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F63440012876271700760527 /* Debug */,
@@ -816,7 +825,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/elastic/apm-agent-ios";
 			requirement = {
-				branch = main;
+				branch = "agent-start-refactor";
 				kind = branch;
 			};
 		};
@@ -825,7 +834,7 @@
 			repositoryURL = "https://github.com/open-telemetry/opentelemetry-swift";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				minimumVersion = 1.1.7;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

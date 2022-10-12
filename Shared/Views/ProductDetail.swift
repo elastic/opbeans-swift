@@ -101,7 +101,7 @@ struct ProductDetail : View {
                     Label("",systemImage: (modelData.cart.contains(where: { item in
                         item.product == product
                     })) ? "cart.badge.minus.fill" : "cart.badge.plus")
-                }
+                }.accessibilityLabel("CartToggle")
             }
         }.reportName("Product Detail - view appearing")
     }
