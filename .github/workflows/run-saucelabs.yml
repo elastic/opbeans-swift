@@ -1,0 +1,20 @@
+name: Run Saucelabs on a CRON schedule
+on:
+  push:
+  schedule:
+    - cron: '5 * * * *'
+jobs:
+  dispatch-saucelabs-job:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
+      with:
+        python-version: 3.9
+    - name: Dispatch Saucelabs script
+      run: | 
+        pip install Appium-Python-Client
+        python3 .sauce/saucelabs.py --sauce-url "${SAUCE_URL}"
+      env:
+        SAUCE_URL: ${{ secrets.SAUCEURL }}
+

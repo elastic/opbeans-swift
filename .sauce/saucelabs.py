@@ -17,7 +17,7 @@ caps['appium:deviceName'] = "iPhone Simulator"
 caps['appium:deviceOrientation'] = "portrait"
 caps['appium:platformVersion'] = "15.4"
 caps['appium:automationName'] = "XCUITest"
-caps['appium:app'] = "storage:filename=opbeans-swift-sim.ipa"
+caps['appium:app'] = "storage:filename=opbeans-swift.app.zip"
 caps['sauce:options'] = {}
 caps['sauce:options']['build'] = 'test'
 caps['sauce:options']['name'] = 'opbeans-swift'
