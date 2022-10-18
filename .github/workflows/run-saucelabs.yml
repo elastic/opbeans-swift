@@ -1,0 +1,15 @@
+name: Run Saucelabs on a CRON schedule
+on:
+  workflow_dispatch:
+#  schedule:
+#    - cron: '5 * * * *'
+jobs:
+  dispatch-saucelabs-job:
+    name: run saucelabs
+    runs-on: ubuntu-latest
+    steps:
+      - name: script
+        with:
+          sauce_url: ${{ secrets.SAUCEURL }}
+        run: python3 .sauce/saucelabs.py --sauce-url "${sauce_url}"
+        
