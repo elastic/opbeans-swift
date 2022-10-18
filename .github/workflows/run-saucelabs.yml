@@ -1,6 +1,6 @@
 name: Run Saucelabs on a CRON schedule
 on:
-  push:
+  workflow_dispatch:
   schedule:
     - cron: '5 * * * *'
 jobs:
