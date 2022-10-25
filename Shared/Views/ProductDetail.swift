@@ -47,7 +47,7 @@ struct ProductDetail : View {
     var product : Product
     @EnvironmentObject var modelData : ModelData
     func toggleCart() {
-        if var item = modelData.cart.first(where: { item in
+        if var _ = modelData.cart.first(where: { item in
             item.product == product
         }) {
             modelData.cart.removeAll { item in

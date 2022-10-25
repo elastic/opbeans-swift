@@ -28,7 +28,7 @@ struct ios_integration_testingApp: App {
             _ = builder.withSecretToken(token)
         }
         
-        var config = builder.build()
+        let config = builder.build()
 
 
         Agent.start(with: config)
