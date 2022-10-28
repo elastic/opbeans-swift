@@ -545,7 +545,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1;
+				MARKETING_VERSION = 2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "co.elastic.opbeans-swift";
 				PRODUCT_NAME = "opbeans-swift";
 				SDKROOT = iphoneos;
@@ -702,7 +702,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1;
+				MARKETING_VERSION = 2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "co.elastic.opbeans-swift";
 				PRODUCT_NAME = "opbeans-swift";
 				SDKROOT = iphoneos;

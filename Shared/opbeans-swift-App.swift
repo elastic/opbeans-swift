@@ -22,7 +22,7 @@ struct ios_integration_testingApp: App {
         
         let builder = AgentConfigBuilder()
         if let url = URL(string: agentConfig.url ) {
-            _ = builder.withURL(url)
+            _ = builder.withServerUrl(url)
         }
         if let token = agentConfig.token, !token.isEmpty {
             _ = builder.withSecretToken(token)
