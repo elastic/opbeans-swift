@@ -13,9 +13,8 @@ url = args.sauce_url
 
 caps = {}
 caps['platformName'] = "iOS"
-caps['appium:deviceName'] = "iPhone Simulator"
+caps['appium:deviceName'] = "iPhone.*"
 caps['appium:deviceOrientation'] = "portrait"
-caps['appium:platformVersion'] = "15.4"
 caps['appium:automationName'] = "XCUITest"
 caps['appium:app'] = "storage:filename=opbeans-swift.app.zip"
 caps['sauce:options'] = {}
