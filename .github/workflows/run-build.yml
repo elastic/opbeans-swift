@@ -38,5 +38,5 @@ jobs:
           cp $PP_PATH ~/Library/MobileDevice/Provisioning\ Profiles
       - name: Build app
         run : |
-          xcodebuild -project opbeans-swift.xcodeproj -scheme "opbeans-swift (iOS)" build -destination generic/platform=iOS -derivedDataPath "./DerivedData"  -allowProvisioningUpdates
+          xcodebuild -project opbeans-swift.xcodeproj -scheme "opbeans-swift (iOS)" clean build -destination generic/platform=iOS -derivedDataPath "./DerivedData"  -allowProvisioningUpdates
 
