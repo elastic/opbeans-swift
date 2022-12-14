@@ -16,7 +16,7 @@ caps['platformName'] = "iOS"
 caps['appium:deviceName'] = "iPhone.*"
 caps['appium:deviceOrientation'] = "portrait"
 caps['appium:automationName'] = "XCUITest"
-caps['appium:app'] = "storage:filename=opbeans-swift.app.zip"
+caps['appium:app'] = "storage:filename=opbeans-swift.ipa"
 caps['sauce:options'] = {}
 caps['sauce:options']['build'] = 'test'
 caps['sauce:options']['name'] = 'opbeans-swift'
