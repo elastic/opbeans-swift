@@ -835,8 +835,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/elastic/apm-agent-ios";
 			requirement = {
-				kind = exactVersion;
-				version = 0.4.0;
+				branch = versioned_truetime;
+				kind = branch;
 			};
 		};
 		F639652B278E50FE00B3C327 /* XCRemoteSwiftPackageReference "opentelemetry-swift" */ = {
