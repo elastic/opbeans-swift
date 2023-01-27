@@ -548,7 +548,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0;
+				MARKETING_VERSION = 3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "co.elastic.opbeans-swift";
 				PRODUCT_NAME = "opbeans-swift";
 				PROVISIONING_PROFILE_SPECIFIER = "SauceLabs Build";
@@ -710,7 +710,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0;
+				MARKETING_VERSION = 3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "co.elastic.opbeans-swift";
 				PRODUCT_NAME = "opbeans-swift";
 				PROVISIONING_PROFILE_SPECIFIER = "SauceLabs Build";
