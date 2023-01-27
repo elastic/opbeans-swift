@@ -29,6 +29,8 @@ struct CustomerRow: View {
                 Text("\(customer.city), \(customer.country)")
             }.foregroundColor(.gray)
                 .font(.caption)
+        }.onTapGesture {
+            fatalError("A Crash!")
         }
     }
 }

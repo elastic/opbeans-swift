@@ -21,7 +21,19 @@ caps['sauce:options'] = {}
 caps['sauce:options']['build'] = 'test'
 caps['sauce:options']['name'] = 'opbeans-swift'
 
+
 driver = webdriver.Remote(url, caps)
+
+el9 = driver.find_element(by=AppiumBy.XPATH, value="//XCUIElementTypeNavigationBar[@name=\"Opbeans Coffee\"]/XCUIElementTypeOther[1]")
+el9.click()
+el6 = driver.find_element(by=AppiumBy.XPATH, value="//XCUIElementTypeStaticText[@name=\"Customers\"]")
+el6.click()
+el8 = driver.find_element(by=AppiumBy.XPATH, value="//XCUIElementTypeApplication[@name=\"opbeans-swift\"]/XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther")
+el8.click() // crash
+
+
+driver.launch_app()
+
 el1 = driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value="Brazil Verde, Italian Roast, Dark Roast Coffee")
 el1.click()
 el2 = driver.find_element(by=AppiumBy.XPATH, value="//XCUIElementTypeButton[@name=\"CartToggle\"]")
