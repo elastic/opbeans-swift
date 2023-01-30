@@ -25,8 +25,10 @@ el5 = driver.find_element(by=AppiumBy.XPATH, value="//XCUIElementTypeNavigationB
 el5.click()
 el6 = driver.find_element(by=AppiumBy.XPATH, value="//XCUIElementTypeStaticText[@name=\"Customers\"]")
 el6.click()
-el8 = driver.find_element(by=AppiumBy.XPATH, value="//XCUIElementTypeApplication[@name=\"opbeans-swift\"]/XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther")
-el8.click()
+
+el7 = driver.find_element(by=AppiumBy.XPATH, value="//XCUIElementTypeApplication[@name=\"opbeans-swift\"]/XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell[1]")
+el7.click()
+
 
 
 driver.launch_app()
