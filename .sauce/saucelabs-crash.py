@@ -17,18 +17,29 @@ caps['appium:deviceName'] = "iPhone Simulator"
 caps['appium:deviceOrientation'] = "portrait"
 caps['appium:platformVersion'] = "16.2"
 caps['appium:automationName'] = "XCUITest"
-caps['appium:app'] = "/Users/brycebuchanan/Desktop/opbeans-swift.zip"
+caps['appium:app'] = "/Users/brycebuchanan/Desktop/payload.zip"
 
 driver = webdriver.Remote(url, caps)
 
-el5 = driver.find_element(by=AppiumBy.XPATH, value="//XCUIElementTypeNavigationBar[@name=\"Opbeans Coffee\"]/XCUIElementTypeOther[1]")
-el5.click()
+el9 = driver.find_element(by=AppiumBy.XPATH, value="//XCUIElementTypeNavigationBar[@name=\"Opbeans Coffee\"]/XCUIElementTypeOther[1]")
+el9.click()
 el6 = driver.find_element(by=AppiumBy.XPATH, value="//XCUIElementTypeStaticText[@name=\"Customers\"]")
 el6.click()
-
-el7 = driver.find_element(by=AppiumBy.XPATH, value="//XCUIElementTypeApplication[@name=\"opbeans-swift\"]/XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell[1]")
+el7 = driver.find_element(by=AppiumBy.XPATH, value="//XCUIElementTypeStaticText[@name=\"Barbara Rogers\"]")
 el7.click()
 
 
+driver.activate_app('co.elastic.opbeans-swift')
 
-driver.launch_app()
+el1 = driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value="Brazil Verde, Italian Roast, Dark Roast Coffee")
+el1.click()
+el2 = driver.find_element(by=AppiumBy.XPATH, value="//XCUIElementTypeButton[@name=\"CartToggle\"]")
+el2.click()
+el3 = driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value="Opbeans Coffee")
+el3.click()
+el4 = driver.find_element(by=AppiumBy.XPATH, value="//XCUIElementTypeNavigationBar[@name=\"Opbeans Coffee\"]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeButton")
+el4.click()
+el5 = driver.find_element(by=AppiumBy.XPATH, value="//XCUIElementTypeButton[@name=\"Checkout\"]")
+el5.click()
+time.sleep(30)
+driver.quit()
