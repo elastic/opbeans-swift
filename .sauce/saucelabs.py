@@ -29,7 +29,7 @@ el9.click()
 el6 = driver.find_element(by=AppiumBy.XPATH, value="//XCUIElementTypeStaticText[@name=\"Customers\"]")
 el6.click()
 el7 = driver.find_element(by=AppiumBy.XPATH, value="//XCUIElementTypeStaticText[@name=\"Barbara Rogers\"]")
-el7.click() // crash
+el7.click()
 
 
 driver.launch_app()
