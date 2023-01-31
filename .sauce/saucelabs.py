@@ -28,7 +28,7 @@ el9 = driver.find_element(by=AppiumBy.XPATH, value="//XCUIElementTypeNavigationB
 el9.click()
 el6 = driver.find_element(by=AppiumBy.XPATH, value="//XCUIElementTypeStaticText[@name=\"Customers\"]")
 el6.click()
-el7 = driver.find_element(by=AppiumBy.XPATH, value="//XCUIElementTypeApplication[@name=\"opbeans-swift\"]/XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell[1]")
+el7 = driver.find_element(by=AppiumBy.XPATH, value="//XCUIElementTypeStaticText[@name="Barbara Rogers"]")
 el7.click() // crash
 
 
