@@ -31,8 +31,7 @@ el6.click()
 el7 = driver.find_element(by=AppiumBy.XPATH, value="//XCUIElementTypeStaticText[@name=\"Barbara Rogers\"]")
 el7.click()
 
-
-driver.launch_app()
+driver.activate_app('co.elastic.opbeans-swift')
 
 el1 = driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value="Brazil Verde, Italian Roast, Dark Roast Coffee")
 el1.click()
