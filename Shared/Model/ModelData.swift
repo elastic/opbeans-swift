@@ -24,14 +24,15 @@ var opbeansAuth = ProcessInfo.processInfo.environment["ELASTIC_OPBEANS_AUTH"]
 
 var api : API = load("apiData.json")
 
-
 class ModelData : ObservableObject {
+
     
     @Published var cart = [CartItem]()
     @Published var products = [Product]()
     @Published var customers = [Customer]()
     @Published var orders = [OrderLine]()
     @Published var user : Customer?
+
     
     func loadProducts() {
         guard products.isEmpty else { return }
@@ -137,10 +138,16 @@ func getAPIData(path: String) async throws -> Data {
     if let auth = api.auth {
             request.addValue("Basic \(auth)", forHTTPHeaderField: "Authorization")
     }
-
     
-    let (data, _) = try await URLSession.shared.data(for: request)
-    return data
+    return try await withCheckedThrowingContinuation { continuation in
+        URLSession.shared.dataTask(with: request) { data, _, error in
+            if let e = error {
+                continuation.resume(throwing: e)
+            } else {
+                continuation.resume(returning: data!)
+            }
+        }.resume()
+    }
 }
 
 func sendCheckout(userId: Int, items: [CartItem]) async throws -> URLResponse {
@@ -157,11 +164,16 @@ func sendCheckout(userId: Int, items: [CartItem]) async throws -> URLResponse {
     if let auth = api.auth {
         request.addValue("Basic \(auth)", forHTTPHeaderField: "Authorization")
     }
-    
-    let (_, response) = try await URLSession.shared.data(for:request)
-    return response
+        
+   return try await withCheckedThrowingContinuation { continuation in
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let e = error {
+                continuation.resume(throwing:e)
+            } else {
+                continuation.resume(returning: response!)
+            }
+        }.resume()
+    }
 }
-
-
 
 
