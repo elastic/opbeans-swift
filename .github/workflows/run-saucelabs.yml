@@ -13,7 +13,7 @@ jobs:
         python-version: 3.9
     - name: Dispatch Saucelabs script
       run: | 
-        pip install Appium-Python-Client
+        pip install Appium-Python-Client==2.11.1
         python3 .sauce/saucelabs.py --sauce-url "${SAUCE_URL}"
       env:
         SAUCE_URL: ${{ secrets.SAUCEURL }}
