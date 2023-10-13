@@ -89,6 +89,11 @@ class ModelData : ObservableObject {
     }
     private func fetchProducts() async -> [Product] {
         do {
+            do {
+                try await getAPIData(path: "api/500")
+            } catch {
+                // nnop
+            }
             return try await JSONDecoder().decode([Product].self, from: getAPIData(path: "api/products"))
         } catch {
             return [Product]()
