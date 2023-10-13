@@ -90,9 +90,14 @@ class ModelData : ObservableObject {
     private func fetchProducts() async -> [Product] {
         do {
             do {
-                try await getAPIData(path: "api/500")
+               let _ = try await httpError404()
             } catch {
-                // nnop
+                // noop
+            }
+            do {
+                let _ = try await httpError500()
+            } catch {
+                // noop
             }
             return try await JSONDecoder().decode([Product].self, from: getAPIData(path: "api/products"))
         } catch {
@@ -137,6 +142,38 @@ func buildUrl(path: String) throws -> URL {
     return url
 }
 
+func httpError500() async throws  -> Data {
+    guard let url = URL(string: "https://httpstat.us/500") else {
+        throw ModelDataError.invalidURL
+    }
+    
+    let request = URLRequest(url: url)
+    return try await withCheckedThrowingContinuation { continuation in
+        URLSession.shared.dataTask(with: request) {data, _, error in
+            if let e = error {
+                continuation.resume(throwing: e)
+            } else {
+                continuation.resume(returning: data!)
+            }
+        }.resume()
+    }
+}
+
+func httpError404() async throws -> Data {
+    guard let url = URL(string: "https://httpstat.us/404") else {
+        throw ModelDataError.invalidURL
+    }
+    let request = URLRequest(url: url)
+    return try await withCheckedThrowingContinuation { continuation in
+        URLSession.shared.dataTask(with: request) {data, _, error in
+            if let e = error {
+                continuation.resume(throwing: e)
+            } else {
+                continuation.resume(returning: data!)
+            }
+        }.resume()
+    }
+}
 func getAPIData(path: String) async throws -> Data {
     var request = try URLRequest( url:buildUrl(path: path))
     
