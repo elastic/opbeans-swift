@@ -14,25 +14,38 @@
 
 import SwiftUI
 import iOSAgent
+
+
+class AppDelegate : NSObject, UIApplicationDelegate {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        let decoder = JSONDecoder()
+        do {
+            let path = Bundle.main.path(forResource: "agent-conf.json", ofType: nil)
+            let configJson = try Data(contentsOf: URL(string:path!)!)
+            let agentConfig = try decoder.decode(AgentConfig.self, from: configJson)
+            let builder = AgentConfigBuilder()
+            if let url = URL(string: agentConfig.url ) {
+                _ = builder.withServerUrl(url)
+            }
+            if let token = agentConfig.token, !token.isEmpty {
+                _ = builder.withSecretToken(token)
+            }
+            
+            let config = builder.build()
+            Agent.start(with: config)
+        } catch {
+            
+        }
+        return true
+    }
+}
+
 @main
 struct ios_integration_testingApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject private var modelData = ModelData()
-    var agentConfig : AgentConfig = load("agent-conf.json")
     init() {
-        
-        let builder = AgentConfigBuilder()
-        if let url = URL(string: agentConfig.url ) {
-            _ = builder.withServerUrl(url)
-        }
-        if let token = agentConfig.token, !token.isEmpty {
-            _ = builder.withSecretToken(token)
-        }
-        
-        let config = builder.build()
-
-
-        Agent.start(with: config)
-        
+    
     }
     var body: some Scene {
         WindowGroup {

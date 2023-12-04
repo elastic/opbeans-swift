@@ -21,8 +21,8 @@
 		F60686DE27B1B68300410A9F /* CartRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60686DC27B1B68300410A9F /* CartRow.swift */; };
 		F60686E027B31F1000410A9F /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60686DF27B31F1000410A9F /* Order.swift */; };
 		F60686E127B31F1000410A9F /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60686DF27B31F1000410A9F /* Order.swift */; };
-		F63389D7260A99EF00EA686B /* delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63389D6260A99EF00EA686B /* delegate.swift */; };
-		F63389D8260A99EF00EA686B /* delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63389D6260A99EF00EA686B /* delegate.swift */; };
+		F63389D7260A99EF00EA686B /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63389D6260A99EF00EA686B /* SessionDelegate.swift */; };
+		F63389D8260A99EF00EA686B /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63389D6260A99EF00EA686B /* SessionDelegate.swift */; };
 		F6343FEF286E27F900760527 /* OrderDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6343FEE286E27F900760527 /* OrderDetails.swift */; };
 		F6343FF0286E27F900760527 /* OrderDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6343FEE286E27F900760527 /* OrderDetails.swift */; };
 		F6343FF2286E589900760527 /* LineItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6343FF1286E589900760527 /* LineItemRow.swift */; };
@@ -125,7 +125,7 @@
 		F60686D927B1AE0600410A9F /* CartDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartDetails.swift; sourceTree = "<group>"; };
 		F60686DC27B1B68300410A9F /* CartRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartRow.swift; sourceTree = "<group>"; };
 		F60686DF27B31F1000410A9F /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
-		F63389D6260A99EF00EA686B /* delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = delegate.swift; sourceTree = "<group>"; };
+		F63389D6260A99EF00EA686B /* SessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDelegate.swift; sourceTree = "<group>"; };
 		F6343FEE286E27F900760527 /* OrderDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetails.swift; sourceTree = "<group>"; };
 		F6343FF1286E589900760527 /* LineItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineItemRow.swift; sourceTree = "<group>"; };
 		F6343FF82876271700760527 /* opbeans-swift.XCUITest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "opbeans-swift.XCUITest.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -218,7 +218,7 @@
 				F63C8FB225A3A3980053EFEC /* Resources */,
 				B306789693285C92CDE27F9D /* Assets.xcassets */,
 				B30671A3FAE11909F7F06F85 /* ContentView.swift */,
-				F63389D6260A99EF00EA686B /* delegate.swift */,
+				F63389D6260A99EF00EA686B /* SessionDelegate.swift */,
 				B30679BF7B318E45890C7F0A /* opbeans-swift-App.swift */,
 			);
 			path = Shared;
@@ -458,7 +458,7 @@
 				F64D79CC27BC3056000CBB28 /* AdminProductRow.swift in Sources */,
 				F64D79CF27BC31D3000CBB28 /* CustomerRow.swift in Sources */,
 				B30675D94736ADF6E39D4B00 /* opbeans-swift-App.swift in Sources */,
-				F63389D7260A99EF00EA686B /* delegate.swift in Sources */,
+				F63389D7260A99EF00EA686B /* SessionDelegate.swift in Sources */,
 				F6E89AD427A9BB3C00863899 /* Products.swift in Sources */,
 				F689113727BAE881003B2F39 /* AdminMenu.swift in Sources */,
 				F63C8FAE25A3A1AD0053EFEC /* ModelData.swift in Sources */,
@@ -491,7 +491,7 @@
 				F64D79CD27BC3056000CBB28 /* AdminProductRow.swift in Sources */,
 				F64D79D027BC31D3000CBB28 /* CustomerRow.swift in Sources */,
 				B3067E3D73D5668C94848800 /* opbeans-swift-App.swift in Sources */,
-				F63389D8260A99EF00EA686B /* delegate.swift in Sources */,
+				F63389D8260A99EF00EA686B /* SessionDelegate.swift in Sources */,
 				F6E89AD527A9BB3C00863899 /* Products.swift in Sources */,
 				F689113827BAE881003B2F39 /* AdminMenu.swift in Sources */,
 				F63C8FAF25A3A1AD0053EFEC /* ModelData.swift in Sources */,
