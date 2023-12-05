@@ -24,6 +24,9 @@ var opbeansAuth = ProcessInfo.processInfo.environment["ELASTIC_OPBEANS_AUTH"]
 
 var api : API = load("apiData.json")
 
+var delegate = SessionDelegate()
+var session = URLSession(configuration: URLSessionConfiguration.default, delegate: delegate, delegateQueue: nil)
+
 class ModelData : ObservableObject {
 
     
@@ -149,7 +152,7 @@ func httpError500() async throws  -> Data {
     
     let request = URLRequest(url: url)
     return try await withCheckedThrowingContinuation { continuation in
-        URLSession.shared.dataTask(with: request) {data, _, error in
+        session.dataTask(with: request) {data, _, error in
             if let e = error {
                 continuation.resume(throwing: e)
             } else {
@@ -165,7 +168,7 @@ func httpError404() async throws -> Data {
     }
     let request = URLRequest(url: url)
     return try await withCheckedThrowingContinuation { continuation in
-        URLSession.shared.dataTask(with: request) {data, _, error in
+        session.dataTask(with: request) {data, _, error in
             if let e = error {
                 continuation.resume(throwing: e)
             } else {
@@ -177,12 +180,13 @@ func httpError404() async throws -> Data {
 func getAPIData(path: String) async throws -> Data {
     var request = try URLRequest( url:buildUrl(path: path))
     
+    
     if let auth = api.auth {
             request.addValue("Basic \(auth)", forHTTPHeaderField: "Authorization")
     }
     
     return try await withCheckedThrowingContinuation { continuation in
-        URLSession.shared.dataTask(with: request) { data, _, error in
+        session.dataTask(with: request) { data, _, error in
             if let e = error {
                 continuation.resume(throwing: e)
             } else {
@@ -208,7 +212,7 @@ func sendCheckout(userId: Int, items: [CartItem]) async throws -> URLResponse {
     }
         
    return try await withCheckedThrowingContinuation { continuation in
-        URLSession.shared.dataTask(with: request) { data, response, error in
+       session.dataTask(with: request) { data, response, error in
             if let e = error {
                 continuation.resume(throwing:e)
             } else {
