@@ -13,8 +13,9 @@
 //   limitations under the License.
 
 import SwiftUI
-import iOSAgent
-
+import ElasticApm
+import OpenTelemetryApi
+import OpenTelemetrySdk
 
 class AppDelegate : NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
@@ -30,8 +31,12 @@ class AppDelegate : NSObject, UIApplicationDelegate {
                 _ = builder.withSecretToken(token)
             }
             
-            let config = builder.build()
-            Agent.start(with: config)
+            let config = builder
+              .build()
+          ElasticApmAgent.start(with: config,
+                      InstrumentationConfigBuilder().withURLSessionInstrumentation(false).build())
+          
+          
         } catch {
             print(error)
         }

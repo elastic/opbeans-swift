@@ -15,7 +15,7 @@
 import SwiftUI
 import OpenTelemetrySdk
 import OpenTelemetryApi
-import iOSAgent
+import ElasticApm
 
 struct ContentView: View {
     @EnvironmentObject var modelData : ModelData

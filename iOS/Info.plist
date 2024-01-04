@@ -26,12 +26,6 @@
 		<true/>
 		<key>NSExceptionDomains</key>
 		<dict>
-			<key>localhost</key>
-			<dict/>
-			<key>NSIncludesSubdomains</key>
-			<true/>
-			<key>NSExceptionAllowsInsecureHTTPLoads</key>
-			<true/>
 			<key>es.io</key>
 			<dict>
 				<key>NSExceptionAllowsInsecureHTTPLoads</key>

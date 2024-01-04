@@ -21,6 +21,7 @@
 		F60686DE27B1B68300410A9F /* CartRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60686DC27B1B68300410A9F /* CartRow.swift */; };
 		F60686E027B31F1000410A9F /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60686DF27B31F1000410A9F /* Order.swift */; };
 		F60686E127B31F1000410A9F /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60686DF27B31F1000410A9F /* Order.swift */; };
+		F619F7292B4719F700CD3332 /* ElasticApm in Frameworks */ = {isa = PBXBuildFile; productRef = F619F7282B4719F700CD3332 /* ElasticApm */; };
 		F63389D7260A99EF00EA686B /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63389D6260A99EF00EA686B /* SessionDelegate.swift */; };
 		F63389D8260A99EF00EA686B /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63389D6260A99EF00EA686B /* SessionDelegate.swift */; };
 		F6343FEF286E27F900760527 /* OrderDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6343FEE286E27F900760527 /* OrderDetails.swift */; };
@@ -30,7 +31,6 @@
 		F6343FFB2876271700760527 /* opbeans_swift_loadgenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6343FFA2876271700760527 /* opbeans_swift_loadgenerator.swift */; };
 		F6396526278E50C900B3C327 /* CPUSampler in Frameworks */ = {isa = PBXBuildFile; productRef = F6396525278E50C900B3C327 /* CPUSampler */; };
 		F6396528278E50C900B3C327 /* MemorySampler in Frameworks */ = {isa = PBXBuildFile; productRef = F6396527278E50C900B3C327 /* MemorySampler */; };
-		F639652A278E50C900B3C327 /* iOSAgent in Frameworks */ = {isa = PBXBuildFile; productRef = F6396529278E50C900B3C327 /* iOSAgent */; };
 		F639652D278E50FE00B3C327 /* NetworkStatus in Frameworks */ = {isa = PBXBuildFile; productRef = F639652C278E50FE00B3C327 /* NetworkStatus */; };
 		F639652F278E50FE00B3C327 /* OpenTelemetryApi in Frameworks */ = {isa = PBXBuildFile; productRef = F639652E278E50FE00B3C327 /* OpenTelemetryApi */; };
 		F6396531278E50FE00B3C327 /* OpenTelemetrySdk in Frameworks */ = {isa = PBXBuildFile; productRef = F6396530278E50FE00B3C327 /* OpenTelemetrySdk */; };
@@ -168,12 +168,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F66060D0287737CB008D3C2D /* CoreTelephony.framework in Frameworks */,
-				F639652A278E50C900B3C327 /* iOSAgent in Frameworks */,
 				F6396528278E50C900B3C327 /* MemorySampler in Frameworks */,
 				F6396526278E50C900B3C327 /* CPUSampler in Frameworks */,
 				F639652D278E50FE00B3C327 /* NetworkStatus in Frameworks */,
 				F639652F278E50FE00B3C327 /* OpenTelemetryApi in Frameworks */,
 				F6396531278E50FE00B3C327 /* OpenTelemetrySdk in Frameworks */,
+				F619F7292B4719F700CD3332 /* ElasticApm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,10 +347,10 @@
 			packageProductDependencies = (
 				F6396525278E50C900B3C327 /* CPUSampler */,
 				F6396527278E50C900B3C327 /* MemorySampler */,
-				F6396529278E50C900B3C327 /* iOSAgent */,
 				F639652C278E50FE00B3C327 /* NetworkStatus */,
 				F639652E278E50FE00B3C327 /* OpenTelemetryApi */,
 				F6396530278E50FE00B3C327 /* OpenTelemetrySdk */,
+				F619F7282B4719F700CD3332 /* ElasticApm */,
 			);
 			productName = "ios-integration-testing (iOS)";
 			productReference = B306775E9D77A17AFA177BEA /* opbeans-swift.app */;
@@ -842,7 +842,7 @@
 			repositoryURL = "https://github.com/elastic/apm-agent-ios";
 			requirement = {
 				kind = exactVersion;
-				version = 0.8.0;
+				version = 1.0.0;
 			};
 		};
 		F639652B278E50FE00B3C327 /* XCRemoteSwiftPackageReference "opentelemetry-swift" */ = {
@@ -850,12 +850,16 @@
 			repositoryURL = "https://github.com/open-telemetry/opentelemetry-swift";
 			requirement = {
 				kind = exactVersion;
-				version = 1.8.0;
+				version = 1.9.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F619F7282B4719F700CD3332 /* ElasticApm */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ElasticApm;
+		};
 		F6396525278E50C900B3C327 /* CPUSampler */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F6396524278E50C900B3C327 /* XCRemoteSwiftPackageReference "apm-agent-ios" */;
@@ -865,11 +869,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F6396524278E50C900B3C327 /* XCRemoteSwiftPackageReference "apm-agent-ios" */;
 			productName = MemorySampler;
-		};
-		F6396529278E50C900B3C327 /* iOSAgent */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F6396524278E50C900B3C327 /* XCRemoteSwiftPackageReference "apm-agent-ios" */;
-			productName = iOSAgent;
 		};
 		F639652C278E50FE00B3C327 /* NetworkStatus */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -13,7 +13,7 @@
 //   limitations under the License.
 
 import SwiftUI
-import iOSAgent
+import ElasticApm
 
 struct OrderDetail: View {
     var order : OrderLine

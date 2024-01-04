@@ -43,5 +43,4 @@ el4 = driver.find_element(by=AppiumBy.XPATH, value="//XCUIElementTypeNavigationB
 el4.click()
 el5 = driver.find_element(by=AppiumBy.XPATH, value="//XCUIElementTypeButton[@name=\"Checkout\"]")
 el5.click()
-time.sleep(30)
 driver.quit()
