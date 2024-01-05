@@ -33,8 +33,7 @@ class AppDelegate : NSObject, UIApplicationDelegate {
             
             let config = builder
               .build()
-          ElasticApmAgent.start(with: config,
-                      InstrumentationConfigBuilder().withURLSessionInstrumentation(false).build())
+          ElasticApmAgent.start(with: config)
           
           
         } catch {
