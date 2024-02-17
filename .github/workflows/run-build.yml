@@ -1,6 +1,9 @@
 name: App build
 on: push
 
+permissions:
+  contents: read
+
 jobs:
   build_with_signing:
     runs-on: macos-12

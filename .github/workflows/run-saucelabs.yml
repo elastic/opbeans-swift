@@ -3,6 +3,9 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '*/10 * * * *'
+permissions:
+  contents: read
+
 jobs:
   dispatch-saucelabs-job:
     runs-on: ubuntu-latest
