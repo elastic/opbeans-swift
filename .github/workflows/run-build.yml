@@ -7,19 +7,7 @@ permissions:
 jobs:
   build_with_signing:
     runs-on: macos-12
-
     steps:
-      - uses: hashicorp/vault-action@v3.0.0
-        with:
-          url: ${{ secrets.VAULT_ADDR }}
-          roleId: ${{ secrets.VAULT_ROLE_ID }}
-          secretId: ${{ secrets.VAULT_SECRET_ID }}
-          method: approle
-          secrets: |
-            secret/observability-team/ci/opbeans-swift-build-cert base64 | BUILD_CERTIFICATE_BASE64 ;
-            secret/observability-team/ci/opbeans-swift-build-cert password | P12_PASSWORD ;
-            secret/observability-team/ci/opbeans-swift-provisioning profile | BUILD_PROVISION_PROFILE_BASE64 ;
-            secret/observability-team/ci/opbeans-swift-keychain password | KEYCHAIN_PASSWORD
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Install the Apple certificate and provisioning profile
@@ -30,16 +18,16 @@ jobs:
           KEYCHAIN_PATH=$RUNNER_TEMP/app-signing.keychain-db
 
           # import certificate and provisioning profile from secrets
-          echo -n "$BUILD_CERTIFICATE_BASE64" | base64 --decode --output $CERTIFICATE_PATH
-          echo -n "$BUILD_PROVISION_PROFILE_BASE64" | base64 --decode --output $PP_PATH
+          echo -n "${{ secrets.BUILD_CERTIFICATE_BASE64 }}" | base64 --decode --output $CERTIFICATE_PATH
+          echo -n "${{ secrets.BUILD_PROVISION_PROFILE_BASE64 }}" | base64 --decode --output $PP_PATH
 
           # create temporary keychain
-          security create-keychain -p "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
+          security create-keychain -p "${{ secrets.KEYCHAIN_PASSWORD }}" $KEYCHAIN_PATH
           security set-keychain-settings -lut 21600 $KEYCHAIN_PATH
-          security unlock-keychain -p "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
+          security unlock-keychain -p "${{ secrets.KEYCHAIN_PASSWORD }}" $KEYCHAIN_PATH
 
           # import certificate to keychain
-          security import $CERTIFICATE_PATH -P "$P12_PASSWORD" -A -t cert -f pkcs12 -k $KEYCHAIN_PATH
+          security import $CERTIFICATE_PATH -P "${{ secrets.P12_PASSWORD }}" -A -t cert -f pkcs12 -k $KEYCHAIN_PATH
           security list-keychain -d user -s $KEYCHAIN_PATH
 
           # apply provisioning profile
@@ -48,4 +36,3 @@ jobs:
       - name: Build app
         run : |
           xcodebuild -project opbeans-swift.xcodeproj -scheme "opbeans-swift (iOS)" clean build -destination generic/platform=iOS -derivedDataPath "./DerivedData"  -allowProvisioningUpdates
-
