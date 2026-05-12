@@ -1,42 +1,29 @@
 # Prerequisites
-- Xcode
-- Docker desktop
-- `apm-ingetration-testing`
-- `opbeans-swift`
-## Xcode
-### get
-download from the OSX app store
-### setup
-add your github access token to Xcode through the menu `Xcode > preferences... > Accounts `
-## Docker desktop
-found at docker.com
-## apm-integration-testing
-`git clone https://github.com/elastic/apm-integration-testing`
-## opbeans-swift
-`git clone https://github.com/elastic/opbeans-swift`
+
+- **Xcode** — Install from the Mac App Store or [Apple Developer](https://developer.apple.com/xcode/). Add your GitHub account under **Xcode → Settings → Accounts** if you need private deps.
+- **[opbeans-node](https://github.com/elastic/opbeans-node)** — Backend API (default port `3000`). Install Node.js and follow that repo for PostgreSQL, Redis, env vars, `npm run db-setup`, and `npm start`.
+- **opbeans-swift** — `git clone https://github.com/elastic/opbeans-swift`
+
 # Setup
-## apm-integration-testing
-The apm-integration-testing suite provides a single tool that will generate & run docker containers for the whole elastic stack with extensive configurability.
 
-`opbeans-swift` needs `opbeans-node` & `opbeans-rum` in addition to the standard elastic backend services : `apmserver`, `ES`, `kibana`, etc.
+## opbeans-node
 
-This can all be achieved locally by running the following command in the `apm-integration-testing` folder:
-```
-./scripts/compose.py start \
---with-opbeans-node \
---with-opbeans-rum \
-main
-```
-note: only the opbeans need to be flagged in the start call, the other tools will be run by default.
+Clone and run the backend per the [opbeans-node README](https://github.com/elastic/opbeans-node/blob/main/README.md). Ensure the HTTP API is reachable at the host and port you will put in `apiData.json` (default `http://localhost:3000`).
 
-## running opbeans-swift
-open opbeans-swift with xcode.
-By default the app is targeting `localhost:8200` for the apm-server and `localhost:3000` for opbeans-rum. but these can be changed by editing the `opbeans-swift-App.swift` and `apiData.json` files respectively.
+## opbeans-swift
 
-Run obeans-swift in a chosen simulator.
+Open `opbeans-swift.xcodeproj` in Xcode.
+
+By default the app reads **`Shared/Resources/apiData.json`** for the opbeans API (`localhost:3000`) and **`Shared/Resources/agent-conf.json`** for the APM Server URL. Adjust those files (and `opbeans-swift-App.swift` only if you change how config is loaded) to match your environment.
+
+Run **opbeans-swift** on a chosen **iOS Simulator** or **iOS Device**.
+
 # Troubleshooting
 
-### coffee data doesn't load in the app
-Verify `localhost:3000` is working properly and accessible via a browser. If it is verify it is set in the opbeans-swift project.
-### data isn't loading in kibana
-verify `localhost:8200` is accessible and set in opbeans-swift project.
+### Coffee data does not load in the app
+
+Verify `http://localhost:3000` (or your configured URL) works in a browser and matches `Shared/Resources/apiData.json`.
+
+### Traces do not appear in Kibana / APM UI
+
+Verify your APM Server URL in `Shared/Resources/agent-conf.json` is correct and reachable from the Simulator’s network (for a physical device, use the Mac’s LAN IP or a public endpoint, not `localhost` on the device).

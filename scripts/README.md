@@ -11,12 +11,12 @@ Additional user flows will be added at a later time.
 usage: generate-data.py [-h] [--destination DESTINATION] [--disable-generate-resources] [--collector-address COLLECTOR_ADDRESS] [--collector-port COLLECTOR_PORT]
 [--collector-tls COLLECTOR_TLS] [--secret-token SECRET_TOKEN] [--opbeans-address OPBEANS_ADDRESS] [--opbeans-auth OPBEANS_AUTH]
 
-run ios-integration-testing with generated OTEL_RESOURCE_ATTRIUTES_ENV
+run the opbeans-swift load generator with generated OTEL resource attributes
 
 optional arguments:
 -h, --help            show this help message and exit
 --destination DESTINATION
-set a device/simulator target for ios-integation-testing
+set a device/simulator target (see `xcodebuild -showdestinations`)
 --disable-generate-resources
 use to disable randomly generated resource values.
 --collector-address COLLECTOR_ADDRESS
@@ -36,7 +36,7 @@ base64 encoded user:password used for basic auth
 ```asciidoc
  python ./scripts/generate-data.py
 ```
-This will run with default settings for connecting to a locally run apm-integration-testing suite. 
+This will run with default settings aimed at local endpoints:
 - apm host : `localhost:8200`
 - node js  : `localhost:3000`
 - target : iOS Simulator iPhone8
